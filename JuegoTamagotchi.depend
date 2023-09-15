@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1694812120 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\main.cpp
+	<iostream>
+	"Tamagotchi.h"
+	<clocale>
+
+1694749088 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\entretenimiento.cpp
+	"Entretenimiento.h"
+
+1694749087 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\entretenimiento.h
+
+1694749632 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\fecha.cpp
+	"Fecha.h"
+
+1694749467 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\fecha.h
+	<string>
+	<ctime>
+
+1694748422 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\tamagotchigato.cpp
+	"TamagotchiGato.h"
+
+1694748423 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchigato.h
+
+1694748421 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\tamagotchioso.cpp
+	"TamagotchiOso.h"
+
+1694749085 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchioso.h
+
+1694749083 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\tamagotchiperro.cpp
+	"TamagotchiPerro.h"
+
+1694748424 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchiperro.h
+
+1694810442 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\tamagotchi.cpp
+	"Tamagotchi.h"
+
+1694810442 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchi.h
+	<cstring>
+	"Fecha.h"
+	"Entretenimiento.h"
+
