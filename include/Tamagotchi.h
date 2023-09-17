@@ -1,8 +1,6 @@
 #pragma once
 #include <cstring>
-#include "Fecha.h"
-#include "Entretenimiento.h"
-
+#include <string>
 
 
 class Tamagotchi
@@ -14,18 +12,14 @@ class Tamagotchi
 
         void setTipoDeMascota(int tipo);
         void setNombre(std::string nombre);
-        void setEdadEnDias(int dia);
         void setSalud(int salud);
         void setHigiene(bool higiene);
         void setHambriento(bool hambriento);
         void setEntretenimiento(bool entretenido);
-        void setFechaDeNacimiento(const Fecha &fecha);
 
         std::string getTipoDeMascota(int tipoMascota);
         std::string getNombre()const;
-        Fecha getFechaDeNacimiento()const;
-        int getEdadEnDias()const;
-        std::string getSalud()const;
+        std::string getSalud(int tipoSalud);
         bool getHigiene()const;
         bool getHambriento()const;
         bool getEntretenimiento()const;
@@ -39,14 +33,13 @@ class Tamagotchi
     protected:
 
         int _tipoDeMascota; //Perro, Gato u Oso
-        char _mascota[5];
+        char _mascota[6];
         char _nombre[15];
-        int _edadEnDias;
-        Fecha _fechaDeNacimiento;
-        int _salud; //0 Muerto,1 Enfermo, 2 Vivo
-        bool _higiene; //limpio o sucio
-        bool _hambriento;//hambriento o satisfecho
-        bool _entretenimiento;
+        int _salud; //0 Muerto, 15< grave, 50< && >15 Enfermo, >50 && <70 regular, >70 saludable, 100 espectacular
+        char _descripcionSalud[13];
+        bool _higiene; //1 limpio o 0 sucio
+        bool _hambriento;//1 satisfecho o 0 hambriento
+        bool _entretenimiento;//1 entretenido o 0 aburrido
 
 
 };

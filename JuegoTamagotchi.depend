@@ -39,3 +39,30 @@
 	"Fecha.h"
 	"Entretenimiento.h"
 
+1694958582 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
+	"TamagotchiGato.h"
+
+1694958582 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchigato.h
+
+1694958582 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchioso.cpp
+	"TamagotchiOso.h"
+
+1694958582 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchioso.h
+
+1694958582 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchiperro.cpp
+	"TamagotchiPerro.h"
+
+1694958582 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchiperro.h
+
+1694963084 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\main.cpp
+	<iostream>
+	"Tamagotchi.h"
+	<clocale>
+
+1694963140 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
+	<cstring>
+	<string>
+
+1694987766 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+	"Tamagotchi.h"
+

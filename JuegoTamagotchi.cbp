@@ -34,13 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/Fecha.h" />
 		<Unit filename="include/Tamagotchi.h" />
 		<Unit filename="include/TamagotchiGato.h" />
 		<Unit filename="include/TamagotchiOso.h" />
 		<Unit filename="include/TamagotchiPerro.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Fecha.cpp" />
 		<Unit filename="src/Tamagotchi.cpp" />
 		<Unit filename="src/TamagotchiGato.cpp" />
 		<Unit filename="src/TamagotchiOso.cpp" />
