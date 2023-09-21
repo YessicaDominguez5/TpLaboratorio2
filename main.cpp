@@ -1,12 +1,19 @@
 #include <iostream>
 #include "Tamagotchi.h"
-#include <clocale>
+#include "Funciones.h"
+
 
 using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL,"spanish");
+    presentacion();
+
+    int tipoElegidoDeMascota = eleccionDeMascota();
+
+
+
+
 
     return 0;
 }

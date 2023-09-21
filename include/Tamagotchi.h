@@ -32,7 +32,7 @@ class Tamagotchi
 
     protected:
 
-        int _tipoDeMascota; //Perro, Gato u Oso
+        int _tipoDeMascota; //Perro, Gato u pollito
         char _mascota[6];
         char _nombre[15];
         int _salud; //0 Muerto, 15< grave, 50< && >15 Enfermo, >50 && <70 regular, >70 saludable, 100 espectacular

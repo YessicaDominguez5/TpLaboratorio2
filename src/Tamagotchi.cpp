@@ -3,7 +3,14 @@
 
 Tamagotchi::Tamagotchi()
 {
-    _tipoDeMascota = 1;
+    _tipoDeMascota = 0;
+    strcpy(_mascota,"");
+    strcpy(_nombre,"");
+    _salud = 100;
+    strcpy(_descripcionSalud,"");
+    _higiene = 1;
+    _hambriento = 1;
+    _entretenimiento = 1;
 }
 
 void Tamagotchi::setTipoDeMascota(int tipo)
@@ -37,7 +44,7 @@ std::string Tamagotchi::getTipoDeMascota(int tipoMascota)
 {
     std::string tipoDeMascota1 = "perro";
     std::string tipoDeMascota2 = "gato";
-    std::string tipoDeMascota3 = "oso";
+    std::string tipoDeMascota3 = "pollito";
 
     if(tipoMascota == 1)
     {

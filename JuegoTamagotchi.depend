@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1694812120 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\main.cpp
+1695255606 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\main.cpp
 	<iostream>
 	"Tamagotchi.h"
-	<clocale>
+	"Funciones.h"
 
 1694749088 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\entretenimiento.cpp
 	"Entretenimiento.h"
@@ -31,13 +31,12 @@
 
 1694748424 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchiperro.h
 
-1694810442 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\tamagotchi.cpp
+1695255149 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
-1694810442 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchi.h
+1695160104 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchi.h
 	<cstring>
-	"Fecha.h"
-	"Entretenimiento.h"
+	<string>
 
 1694958582 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
 	"TamagotchiGato.h"
@@ -65,4 +64,30 @@
 
 1694987766 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
+
+1695254259 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\funciones.cpp
+	"Funciones.h"
+
+1695160106 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\tamagotchipollito.cpp
+	"TamagotchiPollito.h"
+
+1695160102 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\tamagotchipollito.h
+
+1695252346 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\funciones.h
+	<iostream>
+	"rlutil.h"
+
+1658698027 c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\include\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
 
