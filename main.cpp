@@ -11,6 +11,26 @@ int main()
 
     int tipoElegidoDeMascota = eleccionDeMascota();
 
+    switch(tipoElegidoDeMascota)
+    {
+        case 1:
+
+            TamagotchiPerro tamagotchi;
+            break;
+
+        case 2:
+
+            TamagotchiGato tamagotchi;
+            break;
+
+        default:
+
+            TamagotchiPollito tamagotchi;
+            break;
+
+
+    }
+
 
 
 

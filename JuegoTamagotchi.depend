@@ -38,31 +38,31 @@
 	<cstring>
 	<string>
 
-1694958582 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
+1695566151 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
 	"TamagotchiGato.h"
 
-1694958582 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchigato.h
+1695566151 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchigato.h
 
 1694958582 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchioso.cpp
 	"TamagotchiOso.h"
 
 1694958582 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchioso.h
 
-1694958582 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchiperro.cpp
+1695566151 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchiperro.cpp
 	"TamagotchiPerro.h"
 
-1694958582 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchiperro.h
+1695566151 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchiperro.h
 
-1694963084 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\main.cpp
+1695566211 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\main.cpp
 	<iostream>
 	"Tamagotchi.h"
-	<clocale>
+	"Funciones.h"
 
-1694963140 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
+1695566151 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<cstring>
 	<string>
 
-1694987766 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1695566151 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1695254259 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\funciones.cpp
@@ -90,4 +90,30 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+
+1695566202 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\funciones.h
+	<iostream>
+	"rlutil.h"
+
+1695566151 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1695566151 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\funciones.cpp
+	"Funciones.h"
+
+1695566151 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchipollito.cpp
+	"TamagotchiPollito.h"
+
+1695566151 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchipollito.h
 
