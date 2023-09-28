@@ -4,6 +4,8 @@
 #include "TamagotchiPerro.h"
 #include "TamagotchiGato.h"
 #include "TamagotchiPollito.h"
+#include "rlutil.h"
+
 
 
 using namespace std;
@@ -11,37 +13,6 @@ using namespace std;
 int main()
 {
     presentacion();
-
-    int tipoElegidoDeMascota = eleccionDeMascota();
-
-    switch(tipoElegidoDeMascota)
-    {
-        case 1:
-            {
-            TamagotchiPerro tamagotchi;
-
-            }
-            break;
-
-        case 2:
-            {
-
-            TamagotchiGato tamagotchi;
-            }
-            break;
-
-        default:
-            {
-            TamagotchiPollito tamagotchi;
-            }
-            break;
-
-
-    }
-
-
-
-
-
+    principalMenu();
     return 0;
 }

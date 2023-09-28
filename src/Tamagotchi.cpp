@@ -40,17 +40,17 @@ void Tamagotchi::setEntretenimiento(bool entretenido)
     _entretenimiento = entretenido;
 
 }
-std::string Tamagotchi::getTipoDeMascota(int tipoMascota)
+std::string Tamagotchi::getTipoDeMascota()
 {
     std::string tipoDeMascota1 = "perro";
     std::string tipoDeMascota2 = "gato";
     std::string tipoDeMascota3 = "pollito";
 
-    if(tipoMascota == 1)
+    if(_tipoDeMascota == 1)
     {
         strcpy(_mascota, tipoDeMascota1.c_str());
     }
-    else if(tipoMascota == 2)
+    else if(_tipoDeMascota == 2)
     {
         strcpy(_mascota, tipoDeMascota2.c_str());
 

@@ -117,3 +117,60 @@
 
 1695566151 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchipollito.h
 
+1695917575 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\main.cpp
+	<iostream>
+	"Tamagotchi.h"
+	"Funciones.h"
+	"TamagotchiPerro.h"
+	"TamagotchiGato.h"
+	"TamagotchiPollito.h"
+	"rlutil.h"
+
+1695919593 c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\include\tamagotchi.h
+	<cstring>
+	<string>
+
+1695924306 c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\include\funciones.h
+	<iostream>
+	"rlutil.h"
+	"Tamagotchi.h"
+
+1695823171 c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\include\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1695844938 c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\include\tamagotchiperro.h
+	"Tamagotchi.h"
+
+1695823171 c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\include\tamagotchigato.h
+
+1695823171 c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\include\tamagotchipollito.h
+
+1695923936 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\src\funciones.cpp
+	<stdio.h>
+	"Funciones.h"
+
+1695919572 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\src\tamagotchi.cpp
+	"Tamagotchi.h"
+
+1695823171 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\src\tamagotchigato.cpp
+	"TamagotchiGato.h"
+
+1695915573 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\src\tamagotchiperro.cpp
+	"TamagotchiPerro.h"
+	"rlutil.h"
+	<iostream>
+
+1695823171 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\src\tamagotchipollito.cpp
+	"TamagotchiPollito.h"
+

@@ -1,6 +1,7 @@
 #pragma once
+#include "Tamagotchi.h"
 
-class TamagotchiPerro
+class TamagotchiPerro:Tamagotchi
 {
     public:
         TamagotchiPerro();
