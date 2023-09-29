@@ -17,7 +17,7 @@ class Tamagotchi
         void setHambriento(bool hambriento);
         void setEntretenimiento(bool entretenido);
 
-        std::string getTipoDeMascota(int tipoMascota);
+        std::string getTipoDeMascota();
         std::string getNombre()const;
         std::string getSalud(int tipoSalud);
         bool getHigiene()const;
@@ -32,7 +32,7 @@ class Tamagotchi
 
     protected:
 
-        int _tipoDeMascota; //Perro, Gato u pollito
+        int _tipoDeMascota; //Perro, Gato o pollito
         char _mascota[6];
         char _nombre[15];
         int _salud; //0 Muerto, 15< grave, 50< && >15 Enfermo, >50 && <70 regular, >70 saludable, 100 espectacular

@@ -1,8 +1,9 @@
+#include <stdio.h>
 #include "Funciones.h"
-
 
 void presentacion()
 {
+    rlutil::hidecursor();
     rlutil::setColor(rlutil::COLOR::WHITE);
     rlutil::locate(30,10);
 
@@ -20,15 +21,13 @@ void presentacion()
 
 
 
-    system("pause");
+    system("pause>>null");
     rlutil::cls();
-
-
 }
 
 int eleccionDeMascota()
 {
-    int opcion = 1, y = 0;
+    int opcion = -1, y = 0;
 
     do
     {
@@ -43,12 +42,12 @@ int eleccionDeMascota()
         rlutil::locate(30,14);
         std::cout << "********************************************************************" << std::endl <<std::endl;
 
-        showItem(" PERRO ", 60, 16, y == 0);//y == 0 manda el selected en true si esta en la posicion seleccionad
+        showItem(" PERRO ", 60, 16, y == 0);//y == 0 manda el selected en true si esta en la posicion seleccionada
         showItem(" GATO ", 60, 17, y == 1);
         showItem(" POLLITO ", 60, 18, y == 2);
         showItem(" SALIR ", 60, 19, y == 3);
 
-        rlutil::locate(30,23);
+        rlutil::locate(30,21);
         std::cout << "********************************************************************" << std::endl <<std::endl;
 
         int key = rlutil::getkey();//tecla presionada(espera a que se presione una tecla).
@@ -70,7 +69,6 @@ int eleccionDeMascota()
         case 15: //down
             rlutil::locate(58,16 + y);//»
             std::cout << " " << std::endl<< std::endl;
-
             y++;
 
             if(y > 3)
@@ -111,8 +109,8 @@ int eleccionDeMascota()
         }
 
     }
-    while(opcion != 0);
-
+    while(opcion == -1);
+    rlutil::cls();
     return opcion;
 }
 void showItem(const char* text, int posx, int posy, bool selected) //vector de caracteres con el nombre de la opcion, posicion de x, posicion de y, si esta seleccionado
@@ -133,3 +131,102 @@ void showItem(const char* text, int posx, int posy, bool selected) //vector de c
     rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
 
 }
+void principalMenu () // Muestra las opciones para crear o cargar una partida y una opcion que para el programa
+{
+    int y = 1;
+    bool opc = false;
+    do {
+    rlutil::hidecursor();
+    rlutil::setColor(rlutil::COLOR::WHITE);
+    rlutil::locate(30,10);
+    std::cout << "********************************************************************" << std::endl << std::endl;
+    rlutil::locate(30,12);
+    std::cout << "                             TAMAGOTCHI                             "<< std::endl << std::endl;
+    rlutil::locate(30,14);
+    std::cout << "********************************************************************"<< std::endl << std::endl;
+    showItem(" NUEVA PARTIDA ", 58, 16, y == 1);
+    showItem (" CARGAR PARTIDA ", 58,18, y==2);
+    showItem (" SALIR ", 58,20, y==3);
+    rlutil::locate(30,22);
+    std::cout << "********************************************************************"<< std::endl << std::endl;
+
+    int key = rlutil::getkey();
+
+        switch(key)
+        {
+        case 14://up
+
+            rlutil::locate(58,16 + y);//»
+            std::cout << " " << std::endl<< std::endl;
+            y--;
+
+            if(y < 1)
+            {
+                y = 1;
+            }
+            break;
+
+        case 15: //down
+            rlutil::locate(58,16 + y);//»
+            std::cout << " " << std::endl<< std::endl;
+            y++;
+
+            if(y > 3)
+            {
+                y = 3;
+            }
+            break;
+
+        case 1://enter
+            opc = true;
+            rlutil::cls();
+            switch(y)
+            {
+            case 1:
+            {
+                int tipo = eleccionDeMascota();
+                if(tipo !=0){
+                    petCreator(tipo);
+                } else{
+                    opc = false; //Si en la eleccion de mascota se elige salir vuelve al menu anterior
+                }
+            }
+                break;
+            case 2:
+                //seePets(); //Opcion "CARGAR PARTIDA"
+                break;
+            }
+
+            break;
+
+        default:
+            break;
+
+        }
+
+    }while (!opc);
+}
+Tamagotchi petCreator(int tipoDeMascota) //Recibe el tipo de mascota desde eleccionDeMascota(), setea el tipo y el nombre de la mascota.
+{
+        Tamagotchi pet;
+
+        pet.setTipoDeMascota(tipoDeMascota);
+        rlutil::hidecursor();
+        rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
+
+
+        rlutil::locate(30,10);
+        std::cout << "********************************************************************" << std::endl <<std::endl;
+        rlutil::locate(50,12);
+        std::cout << "ELIGE EL NOMBRE DE TU MASCOTA: " << std::endl;
+        rlutil::locate(30,14);
+        std::cout << "********************************************************************" << std::endl <<std::endl;
+
+        char petName[15];
+        rlutil::locate(60,16);
+
+        std::cin >> petName;
+        pet.setNombre(petName);
+        return pet;
+}
+
