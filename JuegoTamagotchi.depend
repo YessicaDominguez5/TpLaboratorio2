@@ -174,7 +174,7 @@
 1695823171 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\src\tamagotchipollito.cpp
 	"TamagotchiPollito.h"
 
-1696632333 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\main.cpp
+1696682385 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Tamagotchi.h"
@@ -182,10 +182,9 @@
 	"TamagotchiPerro.h"
 	"TamagotchiGato.h"
 	"TamagotchiPollito.h"
-	"Pantalla.h"
 	"rlutil.h"
 
-1696648082 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
+1696682357 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -233,7 +232,7 @@
 1696647950 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
-1696650291 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1696685751 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1696648119 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp

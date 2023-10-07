@@ -5,7 +5,6 @@
 #include "TamagotchiPerro.h"
 #include "TamagotchiGato.h"
 #include "TamagotchiPollito.h"
-#include "Pantalla.h"
 #include "rlutil.h"
 
 

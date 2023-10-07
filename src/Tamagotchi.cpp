@@ -13,7 +13,9 @@ Tamagotchi::Tamagotchi()
     _entretenimiento = 1;
     _texture.loadFromFile("Huevo.png");
     _sprite.setTexture(_texture);
-    _velocity = 4;
+    _velocity = {4,4};
+    _sprite.setOrigin(_sprite.getGlobalBounds().width/2, _sprite.getGlobalBounds().height); //Para dar vuelta la imagen seleccionando el punto en donde va a agarrar para invertirla
+    //getGlobalBounds trae los bordes del sprite, ancho del la imagen dividido 2 para que tome como punto la mitad de la imagen
 }
 
 void Tamagotchi::setTipoDeMascota(int tipo)
@@ -185,44 +187,58 @@ void Tamagotchi::jugar()
 
 void Tamagotchi::update()
 {
+    _velocity = {0,0};
     //para que se mueva el sprite
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) // _velocity{0,-4};
     {
-        _sprite.move(0, -_velocity);
+        _velocity.y = -4;
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))// _velocity{-4,0};
     {
-        _sprite.move(-_velocity, 0);
+        _velocity.x = -4;
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))// _velocity{0,4};
     {
-        _sprite.move(0, _velocity);
+        _velocity.y = 4;
     }
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))// _velocity{4,0};
     {
-        _sprite.move(_velocity, 0);
+        _velocity.x = 4;
+    }
+
+    _sprite.move(_velocity);
+
+    //para que mire hacia el lado que camina
+
+    if(_velocity.x < 0)
+    {
+        _sprite.setScale(-1,1);
+    }
+    else if(_velocity.x > 0)
+    {
+        _sprite.setScale(1,1);
     }
 
     //para que no salga de pantalla
 
-    if(_sprite.getPosition().x < 0)
+    if(_sprite.getGlobalBounds().left < 0)
     {
-        _sprite.setPosition(0,_sprite.getPosition().y); //que no se vaya para la izquierda
+        _sprite.setPosition(_sprite.getOrigin().x,_sprite.getPosition().y); //Para que no se vaya para la izquierda, en vez de setPosition() ponemos getOrigin() para que no aparezca solo la mitad del sprite, ya que el origin lo establecimos en la mitad del sprite.
     }
 
-    if(_sprite.getPosition().y < 0)
+    if(_sprite.getGlobalBounds().top < 0)
     {
-        _sprite.setPosition(_sprite.getPosition().x,0); //que no se vaya para arriba
+        _sprite.setPosition(_sprite.getPosition().x,_sprite.getOrigin().y); //que no se vaya para arriba
     }
 
-    if(_sprite.getPosition().x + _sprite.getGlobalBounds().width > 800)
+  if(_sprite.getGlobalBounds().left + _sprite.getGlobalBounds().width > 800)
     {
-        _sprite.setPosition(800 -_sprite.getGlobalBounds().width,_sprite.getPosition().y);//que no se vaya para la derecha
+        _sprite.setPosition(800 -(_sprite.getGlobalBounds().width - _sprite.getOrigin().x),_sprite.getPosition().y);//que no se vaya para la derecha
     }
 
-    if(_sprite.getPosition().y + _sprite.getGlobalBounds().height > 600)
+   if(_sprite.getGlobalBounds().top + _sprite.getGlobalBounds().height > 600)
     {
-        _sprite.setPosition(_sprite.getPosition().x,600 - _sprite.getGlobalBounds().height);//que no se vaya para abajo
+        _sprite.setPosition(_sprite.getPosition().x, 600 + _sprite.getGlobalBounds().height - _sprite.getOrigin().y);//que no se vaya para abajo
     }
 
 

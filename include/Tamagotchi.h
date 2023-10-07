@@ -51,7 +51,7 @@ protected:
     bool _entretenimiento;//1 entretenido o 0 aburrido
     sf::Sprite _sprite;
     sf::Texture _texture;
-    float _velocity;
+    sf::Vector2f _velocity;
 
 
 
