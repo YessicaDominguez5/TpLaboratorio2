@@ -33,7 +33,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="SFML/include" />
 		</Compiler>
+		<Linker>
+			<Add library="SFML/lib/libsfml-graphics-d.a" />
+			<Add library="SFML/lib/libsfml-system-d.a" />
+			<Add library="SFML/lib/libsfml-window-d.a" />
+			<Add directory="SFML/lib" />
+		</Linker>
 		<Unit filename="include/Funciones.h" />
 		<Unit filename="include/Tamagotchi.h" />
 		<Unit filename="include/TamagotchiGato.h" />

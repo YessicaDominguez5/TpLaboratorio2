@@ -1,12 +1,23 @@
 #pragma once
 #include "Tamagotchi.h"
+#include <SFML/Graphics.hpp>
+#include <stdio.h>
 
-class TamagotchiPerro:Tamagotchi
+
+class TamagotchiPerro : public Tamagotchi
 {
-    public:
-        TamagotchiPerro();
+ public:
+
+    TamagotchiPerro();
+    void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
+    void jugar();
 
 
-    private:
+
+private:
+
+
+
 };
+
 

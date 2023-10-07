@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "Funciones.h"
 
 void presentacion()
@@ -135,22 +134,23 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
 {
     int y = 1;
     bool opc = false;
-    do {
-    rlutil::hidecursor();
-    rlutil::setColor(rlutil::COLOR::WHITE);
-    rlutil::locate(30,10);
-    std::cout << "********************************************************************" << std::endl << std::endl;
-    rlutil::locate(30,12);
-    std::cout << "                             TAMAGOTCHI                             "<< std::endl << std::endl;
-    rlutil::locate(30,14);
-    std::cout << "********************************************************************"<< std::endl << std::endl;
-    showItem(" NUEVA PARTIDA ", 58, 16, y == 1);
-    showItem (" CARGAR PARTIDA ", 58,18, y==2);
-    showItem (" SALIR ", 58,20, y==3);
-    rlutil::locate(30,22);
-    std::cout << "********************************************************************"<< std::endl << std::endl;
+    do
+    {
+        rlutil::hidecursor();
+        rlutil::setColor(rlutil::COLOR::WHITE);
+        rlutil::locate(30,10);
+        std::cout << "********************************************************************" << std::endl << std::endl;
+        rlutil::locate(30,12);
+        std::cout << "                             TAMAGOTCHI                             "<< std::endl << std::endl;
+        rlutil::locate(30,14);
+        std::cout << "********************************************************************"<< std::endl << std::endl;
+        showItem(" NUEVA PARTIDA ", 58, 16, y == 1);
+        showItem (" CARGAR PARTIDA ", 58,18, y==2);
+        showItem (" SALIR ", 58,20, y==3);
+        rlutil::locate(30,22);
+        std::cout << "********************************************************************"<< std::endl << std::endl;
 
-    int key = rlutil::getkey();
+        int key = rlutil::getkey();
 
         switch(key)
         {
@@ -185,13 +185,33 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
             case 1:
             {
                 int tipo = eleccionDeMascota();
-                if(tipo !=0){
-                    petCreator(tipo);
-                } else{
+                if(tipo == 1) //si la mascota es tipo 1 crea un objeto TamagotchiPerro
+                {
+
+                    TamagotchiPerro tp;
+                    tp.petCreator(tipo);
+                    tp.jugar();
+
+                }
+                else if(tipo == 2)//si la mascota es tipo 2 crea un objeto TamagotchiGato
+                {
+                    TamagotchiGato tg;
+                    tg.petCreator(tipo);
+                    tg.jugar();
+                }
+                else if(tipo == 3)//si la mascota es tipo 3 crea un objeto TamagotchiPollito
+                {
+                    TamagotchiPollito tpo;
+                    tpo.petCreator(tipo);
+                    tpo.jugar();
+
+                }
+                else
+                {
                     opc = false; //Si en la eleccion de mascota se elige salir vuelve al menu anterior
                 }
             }
-                break;
+            break;
             case 2:
                 //seePets(); //Opcion "CARGAR PARTIDA"
                 break;
@@ -204,29 +224,7 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
 
         }
 
-    }while (!opc);
-}
-Tamagotchi petCreator(int tipoDeMascota) //Recibe el tipo de mascota desde eleccionDeMascota(), setea el tipo y el nombre de la mascota.
-{
-        Tamagotchi pet;
-
-        pet.setTipoDeMascota(tipoDeMascota);
-        rlutil::hidecursor();
-        rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
-
-
-        rlutil::locate(30,10);
-        std::cout << "********************************************************************" << std::endl <<std::endl;
-        rlutil::locate(50,12);
-        std::cout << "ELIGE EL NOMBRE DE TU MASCOTA: " << std::endl;
-        rlutil::locate(30,14);
-        std::cout << "********************************************************************" << std::endl <<std::endl;
-
-        char petName[15];
-        rlutil::locate(60,16);
-
-        std::cin >> petName;
-        pet.setNombre(petName);
-        return pet;
+    }
+    while (!opc);
 }
 
