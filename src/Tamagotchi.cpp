@@ -1,4 +1,5 @@
 #include "Tamagotchi.h"
+#include "Salud.h"
 
 
 Tamagotchi::Tamagotchi()
@@ -6,8 +7,7 @@ Tamagotchi::Tamagotchi()
     _tipoDeMascota = 0;
     strcpy(_mascota,"");
     strcpy(_nombre,"");
-    _salud = 100;
-    strcpy(_descripcionSalud,"");
+    _estadoSalud = Salud();
     _higiene = 1;
     _hambriento = 1;
     _entretenimiento = 1;
@@ -16,6 +16,7 @@ Tamagotchi::Tamagotchi()
     _velocity = {4,4};
     _sprite.setOrigin(_sprite.getGlobalBounds().width/2, _sprite.getGlobalBounds().height); //Para dar vuelta la imagen seleccionando el punto en donde va a agarrar para invertirla
     //getGlobalBounds trae los bordes del sprite, ancho del la imagen dividido 2 para que tome como punto la mitad de la imagen
+    _sprite.setPosition(1,300);
 }
 
 void Tamagotchi::setTipoDeMascota(int tipo)
@@ -27,11 +28,7 @@ void Tamagotchi::setNombre(std::string nombre)
     strcpy(_nombre,nombre.c_str()); //para pasar de string a vector de char
 
 }
-void Tamagotchi::setSalud(int salud)
-{
-    _salud = salud;
 
-}
 void Tamagotchi::setHigiene(bool higiene)
 {
     _higiene = higiene;
@@ -73,45 +70,6 @@ std::string Tamagotchi::getNombre()const
 
     return _nombre;
 
-}
-
-std::string Tamagotchi::getSalud(int tipoSalud)
-{
-
-    std::string EstadoDeSalud1 = "Espectacular";
-    std::string EstadoDeSalud2 = "Saludable";
-    std::string EstadoDeSalud3 = "Regular";
-    std::string EstadoDeSalud4 = "Enfermo";
-    std::string EstadoDeSalud5 = "Grave";
-    std::string EstadoDeSalud6 = "Muerto";
-
-    if(tipoSalud == 100)
-    {
-        strcpy(_descripcionSalud, EstadoDeSalud1.c_str());
-    }
-
-    else if(tipoSalud >= 70)
-    {
-        strcpy(_descripcionSalud, EstadoDeSalud2.c_str());
-    }
-    else if(tipoSalud >= 50 && tipoSalud < 70)
-    {
-        strcpy(_descripcionSalud, EstadoDeSalud3.c_str());
-    }
-    else if(tipoSalud < 50 && tipoSalud >= 15)
-    {
-        strcpy(_descripcionSalud, EstadoDeSalud4.c_str());
-    }
-    else if(tipoSalud > 0 && tipoSalud < 15)
-    {
-        strcpy(_descripcionSalud, EstadoDeSalud5.c_str());
-    }
-    else
-    {
-        strcpy(_descripcionSalud, EstadoDeSalud6.c_str());
-    }
-
-    return _descripcionSalud;
 }
 
 bool Tamagotchi::getHigiene()const
@@ -157,7 +115,6 @@ void Tamagotchi::draw(sf::RenderTarget& target, sf::RenderStates states)const
 }
 
 
-
 void Tamagotchi::jugar()
 {
 
@@ -166,6 +123,7 @@ void Tamagotchi::jugar()
     sf::RenderWindow window(sf::VideoMode(800, 600), "TAMAGOTCHI");
     window.setFramerateLimit(60); //Limita los fps por segundo(velocidad de movimiento del sprite)
 
+    Salud salud;
 
     while (window.isOpen()) //Game Loop
     {
@@ -179,6 +137,7 @@ void Tamagotchi::jugar()
         window.clear();
         update();
         window.draw(_sprite);
+        window.draw(salud);
         window.display();
     }
 
@@ -187,6 +146,8 @@ void Tamagotchi::jugar()
 
 void Tamagotchi::update()
 {
+
+
     _velocity = {0,0};
     //para que se mueva el sprite
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) // _velocity{0,-4};
@@ -243,6 +204,8 @@ void Tamagotchi::update()
 
 
 }
+
+
 
 
 

@@ -107,10 +107,10 @@ int eleccionDeMascota()
 
         }
 
+    return opcion;
     }
     while(opcion == -1);
     rlutil::cls();
-    return opcion;
 }
 void showItem(const char* text, int posx, int posy, bool selected) //vector de caracteres con el nombre de la opcion, posicion de x, posicion de y, si esta seleccionado
 {
@@ -189,6 +189,7 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
                 {
 
                     TamagotchiPerro tp;
+                    Tamagotchi tchi;
                     tp.petCreator(tipo);
                     tp.jugar();
 

@@ -42,17 +42,25 @@
 			<Add directory="SFML/lib" />
 		</Linker>
 		<Unit filename="include/Funciones.h" />
+		<Unit filename="include/Salud.h" />
 		<Unit filename="include/Tamagotchi.h" />
 		<Unit filename="include/TamagotchiGato.h" />
 		<Unit filename="include/TamagotchiPerro.h" />
 		<Unit filename="include/TamagotchiPollito.h" />
+		<Unit filename="include/fecha.h" />
+		<Unit filename="include/fechahorario.h" />
+		<Unit filename="include/horario.h" />
 		<Unit filename="include/rlutil.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Funciones.cpp" />
+		<Unit filename="src/Salud.cpp" />
 		<Unit filename="src/Tamagotchi.cpp" />
 		<Unit filename="src/TamagotchiGato.cpp" />
 		<Unit filename="src/TamagotchiPerro.cpp" />
 		<Unit filename="src/TamagotchiPollito.cpp" />
+		<Unit filename="src/fecha.cpp" />
+		<Unit filename="src/fechahorario.cpp" />
+		<Unit filename="src/horario.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
