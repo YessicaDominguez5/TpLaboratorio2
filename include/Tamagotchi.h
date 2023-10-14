@@ -21,6 +21,7 @@ public:
     void setSalud(int tipoSalud);
 
     std::string getSalud(int posVector);
+    int getSaludNumerica();
     std::string getTipoDeMascota();
     std::string getNombre()const;
     bool getHigiene()const;
@@ -31,6 +32,8 @@ public:
 
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
+    void dibujarSalud(sf::RenderWindow& window);
+    void cantidadCorazoness(sf::RenderWindow&,int cant);
 
     virtual void jugar();
     void update();

@@ -37,7 +37,11 @@ void Tamagotchi::setNombre(std::string nombre)
 
 void Tamagotchi::setSalud(int salud)
 {
-  _salud = salud;
+    if(salud <= 100 && salud >= 0)
+    {
+        _salud = salud;
+
+    }
 }
 
 std::string Tamagotchi::getSalud(int posVector)
@@ -124,6 +128,10 @@ std::string Tamagotchi::getNombre()const
     return _nombre;
 
 }
+int Tamagotchi::getSaludNumerica()
+{
+    return _salud;
+}
 
 bool Tamagotchi::getHigiene()const
 {
@@ -187,16 +195,11 @@ void Tamagotchi::jugar()
                 window.close();
         }
 
-
         window.clear();
         window.draw(_sprite);
-         int posX = 25; /// Posicion X inicial (para el primer corazon)
-            for(int i = 0; i < 6; i++){ /// Como tenes la vida completa, tenemos que dibujar 5/6 corazones
-                _estadoSalud[i].SetearImagen();
-                _estadoSalud[i].setearPosicion(posX);/// Posicion del corazon
-                window.draw(_estadoSalud[i].getSprite());
-                posX+=30;
-            }
+
+        dibujarSalud(window);
+
         update();
         window.display();
     }
@@ -262,6 +265,51 @@ void Tamagotchi::update()
 
 
 }
+void Tamagotchi::dibujarSalud(sf::RenderWindow& window)
+{
+
+    if(_salud == 100)//espetacular
+
+    {
+        int cant = 5;
+        cantidadCorazoness(window,cant);
+
+    }
+    else if(_salud < 100 && _salud >= 70)//saludable
+    {
+       int cant = 4;
+        cantidadCorazoness(window,cant);
+    }
+    else if(_salud >= 50 && _salud < 70)//regular
+    {
+        int cant = 3;
+        cantidadCorazoness(window,cant);
+    }
+    else if(_salud >= 15 && _salud < 50)//enfermo
+    {
+        int cant = 2;
+        cantidadCorazoness(window,cant);
+    }
+    else if(_salud > 0 && _salud < 15) //grave
+    {
+        int cant = 1;
+        cantidadCorazoness(window,cant);
+    }
+
+
+    }
+    void Tamagotchi::cantidadCorazoness(sf::RenderWindow& window ,int cant)
+    {
+         int posX = 25; /// Posicion X inicial (para el primer corazon)
+
+            for(int i = 0; i < cant; i++)  /// Como tenes la vida completa, tenemos que dibujar 5 corazones
+        {
+            _estadoSalud[i].SetearImagen();
+            _estadoSalud[i].setearPosicion(posX);/// Posicion del corazon
+            window.draw(_estadoSalud[i].getSprite());
+            posX+=30;
+        }
+    }
 
 
 
