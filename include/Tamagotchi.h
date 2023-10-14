@@ -14,10 +14,13 @@ public:
     Tamagotchi();
     void setTipoDeMascota(int tipo);
     void setNombre(std::string nombre);
+    void setSaludDeSalud(int salud);
     void setHigiene(bool higiene);
     void setHambriento(bool hambriento);
     void setEntretenimiento(bool entretenido);
+    void setSalud(int tipoSalud);
 
+    std::string getSalud(int posVector);
     std::string getTipoDeMascota();
     std::string getNombre()const;
     bool getHigiene()const;
@@ -28,6 +31,7 @@ public:
 
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
+
     virtual void jugar();
     void update();
     void limpiar();
@@ -43,7 +47,9 @@ protected:
     int _tipoDeMascota; //Perro, Gato o pollito
     char _mascota[6];
     char _nombre[15];
-    Salud _estadoSalud;
+    int _salud;
+    Salud _estadoSalud[6];
+    char _descripcionSalud[13];
     bool _higiene; //1 limpio o 0 sucio
     bool _hambriento;//1 satisfecho o 0 hambriento
     bool _entretenimiento;//1 entretenido o 0 aburrido

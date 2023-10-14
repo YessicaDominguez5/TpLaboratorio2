@@ -7,13 +7,14 @@ class Salud : public sf::Drawable
 {
 public:
     Salud();
-    void setSalud(int salud);
-    std::string getSalud(int tipoSalud);
+
+    void SetearImagen();
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
+    void setearPosicion(int x);
+    sf::Sprite getSprite();
 
 private:
-    int _salud;//0 Muerto, 15< grave, 50< && >15 Enfermo, >50 && <70 regular, >70 saludable, 100 espectacular
-    char _descripcionSalud[13];
+
     sf::Sprite _spriteSalud;
     sf::Texture _textureSalud;
 };

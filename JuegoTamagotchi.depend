@@ -69,7 +69,7 @@
 	"TamagotchiPollito.h"
 	"rlutil.h"
 
-1697077447 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
+1697290084 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -78,7 +78,7 @@
 	"rlutil.h"
 	"Salud.h"
 
-1697208121 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1697290420 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 	"Salud.h"
 
@@ -130,7 +130,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1697208121 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\funciones.cpp
+1697239108 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
 1696707404 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchipollito.cpp
@@ -1125,11 +1125,11 @@
 	"horario.h"
 	<ctime>
 
-1697196769 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\salud.h
+1697290411 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\salud.h
 	<SFML/Graphics.hpp>
 	<string>
 	<cstring>
 
-1697207736 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\salud.cpp
+1697290429 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\salud.cpp
 	"Salud.h"
 

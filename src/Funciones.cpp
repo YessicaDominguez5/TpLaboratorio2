@@ -107,9 +107,9 @@ int eleccionDeMascota()
 
         }
 
-    return opcion;
     }
     while(opcion == -1);
+    return opcion;
     rlutil::cls();
 }
 void showItem(const char* text, int posx, int posy, bool selected) //vector de caracteres con el nombre de la opcion, posicion de x, posicion de y, si esta seleccionado
