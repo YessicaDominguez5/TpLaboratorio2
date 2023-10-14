@@ -41,8 +41,12 @@
 			<Add library="SFML/lib/libsfml-window-d.a" />
 			<Add directory="SFML/lib" />
 		</Linker>
+		<Unit filename="include/Entretenimiento.h" />
 		<Unit filename="include/Funciones.h" />
+		<Unit filename="include/Hambre.h" />
+		<Unit filename="include/Higiene.h" />
 		<Unit filename="include/Salud.h" />
+		<Unit filename="include/Suenio.h" />
 		<Unit filename="include/Tamagotchi.h" />
 		<Unit filename="include/TamagotchiGato.h" />
 		<Unit filename="include/TamagotchiPerro.h" />
@@ -51,9 +55,14 @@
 		<Unit filename="include/fechahorario.h" />
 		<Unit filename="include/horario.h" />
 		<Unit filename="include/rlutil.h" />
+		<Unit filename="include/suenio.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Entretenimiento.cpp" />
 		<Unit filename="src/Funciones.cpp" />
+		<Unit filename="src/Hambre.cpp" />
+		<Unit filename="src/Higiene.cpp" />
 		<Unit filename="src/Salud.cpp" />
+		<Unit filename="src/Suenio.cpp" />
 		<Unit filename="src/Tamagotchi.cpp" />
 		<Unit filename="src/TamagotchiGato.cpp" />
 		<Unit filename="src/TamagotchiPerro.cpp" />

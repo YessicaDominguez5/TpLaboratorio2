@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <string>
-#include <cstring>
+
 
 class Salud : public sf::Drawable
 {

@@ -19,6 +19,7 @@ public:
     void setHambriento(bool hambriento);
     void setEntretenimiento(bool entretenido);
     void setSalud(int tipoSalud);
+    void setSuenio(bool suenio);
 
     std::string getSalud(int posVector);
     int getSaludNumerica();
@@ -27,6 +28,7 @@ public:
     bool getHigiene()const;
     bool getHambriento()const;
     bool getEntretenimiento()const;
+    bool getSuenio()const;
 
     void petCreator(int tipoDeMascota);
 
@@ -56,6 +58,7 @@ protected:
     bool _higiene; //1 limpio o 0 sucio
     bool _hambriento;//1 satisfecho o 0 hambriento
     bool _entretenimiento;//1 entretenido o 0 aburrido
+    bool _suenio; //1 despierto o 0 con sueño
     sf::Sprite _sprite;
     sf::Texture _texture;
     sf::Vector2f _velocity;

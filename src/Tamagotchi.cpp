@@ -1,5 +1,9 @@
 #include "Tamagotchi.h"
 #include "Salud.h"
+#include "Higiene.h"
+#include "Hambre.h"
+#include "Entretenimiento.h"
+#include "suenio.h"
 
 
 Tamagotchi::Tamagotchi()
@@ -8,21 +12,14 @@ Tamagotchi::Tamagotchi()
     strcpy(_mascota,"");
     strcpy(_nombre,"");
     _salud = 100;
-
-    for(int i = 0; i < 6; i++)
-    {
-        _estadoSalud[i] = Salud();
-
-    }
-    _higiene = 1;
-    _hambriento = 1;
-    _entretenimiento = 1;
-    //_texture.loadFromFile("Huevo.png");
-    //_sprite.setTexture(_texture);
+    _higiene = true;
+    _hambriento = true;
+    _entretenimiento = true;
+    _suenio = true;
     _velocity = {4,4};
     _sprite.setOrigin(_sprite.getGlobalBounds().width/2, _sprite.getGlobalBounds().height); //Para dar vuelta la imagen seleccionando el punto en donde va a agarrar para invertirla
     //getGlobalBounds trae los bordes del sprite, ancho del la imagen dividido 2 para que tome como punto la mitad de la imagen
-    _sprite.setPosition(1,300);
+    _sprite.setPosition(300,200);
 }
 
 void Tamagotchi::setTipoDeMascota(int tipo)
@@ -83,8 +80,6 @@ std::string Tamagotchi::getSalud(int posVector)
     return _descripcionSalud;
 }
 
-
-
 void Tamagotchi::setHigiene(bool higiene)
 {
     _higiene = higiene;
@@ -97,6 +92,10 @@ void Tamagotchi::setEntretenimiento(bool entretenido)
 {
     _entretenimiento = entretenido;
 
+}
+void Tamagotchi::setSuenio(bool suenio)
+{
+    _suenio = suenio;
 }
 
 std::string Tamagotchi::getTipoDeMascota()
@@ -146,6 +145,10 @@ bool Tamagotchi::getEntretenimiento()const
 {
     return _entretenimiento;
 }
+bool Tamagotchi::getSuenio()const
+{
+    return _suenio;
+}
 void Tamagotchi::petCreator(int tipoDeMascota) //Recibe el tipo de mascota desde eleccionDeMascota(), setea el tipo y el nombre de la mascota.
 {
 
@@ -180,7 +183,7 @@ void Tamagotchi::draw(sf::RenderTarget& target, sf::RenderStates states)const
 void Tamagotchi::jugar()
 {
 
-    system("cls");
+    rlutil::cls();
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "TAMAGOTCHI");
     window.setFramerateLimit(60); //Limita los fps por segundo(velocidad de movimiento del sprite)
@@ -196,9 +199,27 @@ void Tamagotchi::jugar()
         }
 
         window.clear();
-        window.draw(_sprite);
+        window.draw(_sprite); //dibuja al personaje
 
-        dibujarSalud(window);
+        dibujarSalud(window); //dibuja los corazones
+
+        Higiene h;
+
+        h.TipoHigiene(_higiene); //si esta limpio o sucio
+
+        window.draw(h); //dibuja perfume si esta limpio o emogie si esta sucio
+
+        Hambre ha;
+        ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
+        window.draw(ha); //dibuja plato lleno si esta satisfecho y plato vacio si tiene hambre
+
+        Entretenimiento e;
+        e.TipoEntretenimiento(_entretenimiento);
+        window.draw(e);
+
+        Suenio s;
+        s.TipoSuenio(_suenio);
+        window.draw(s);
 
         update();
         window.display();

@@ -69,7 +69,7 @@
 	"TamagotchiPollito.h"
 	"rlutil.h"
 
-1697293256 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
+1697305666 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -78,9 +78,13 @@
 	"rlutil.h"
 	"Salud.h"
 
-1697293384 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1697306794 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 	"Salud.h"
+	"Higiene.h"
+	"Hambre.h"
+	"Entretenimiento.h"
+	"suenio.h"
 
 1695254259 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\funciones.cpp
 	"Funciones.h"
@@ -1125,11 +1129,33 @@
 	"horario.h"
 	<ctime>
 
-1697290411 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\salud.h
+1697297518 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\salud.h
 	<SFML/Graphics.hpp>
-	<string>
-	<cstring>
 
 1697292722 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\salud.cpp
 	"Salud.h"
+
+1697304100 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\higiene.cpp
+	"Higiene.h"
+
+1697299176 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\higiene.h
+	<SFML/Graphics.hpp>
+
+1697303985 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\hambre.cpp
+	"Hambre.h"
+
+1697303127 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\hambre.h
+	<SFML/Graphics.hpp>
+
+1697305285 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\entretenimiento.cpp
+	"Entretenimiento.h"
+
+1697304562 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\entretenimiento.h
+	<SFML/Graphics.hpp>
+
+1697306855 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\suenio.cpp
+	"Suenio.h"
+
+1697305894 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\suenio.h
+	<SFML/Graphics.hpp>
 
