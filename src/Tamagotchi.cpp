@@ -266,12 +266,12 @@ void Tamagotchi::update()
 
     if(_sprite.getGlobalBounds().left < 0)
     {
-        _sprite.setPosition(_sprite.getOrigin().x,_sprite.getPosition().y); //Para que no se vaya para la izquierda, en vez de setPosition() ponemos getOrigin() para que no aparezca solo la mitad del sprite, ya que el origin lo establecimos en la mitad del sprite.
+        _sprite.setPosition(_sprite.getGlobalBounds().width,_sprite.getPosition().y);
     }
 
-    if(_sprite.getGlobalBounds().top < 0)
+    if(_sprite.getGlobalBounds().top < 120)
     {
-        _sprite.setPosition(_sprite.getPosition().x,_sprite.getOrigin().y); //que no se vaya para arriba
+        _sprite.setPosition(_sprite.getPosition().x, 120); //que no se vaya para arriba
     }
 
     if(_sprite.getGlobalBounds().left + _sprite.getGlobalBounds().width > 800)
@@ -281,7 +281,7 @@ void Tamagotchi::update()
 
     if(_sprite.getGlobalBounds().top + _sprite.getGlobalBounds().height > 600)
     {
-        _sprite.setPosition(_sprite.getPosition().x, 600 + _sprite.getGlobalBounds().height - _sprite.getOrigin().y);//que no se vaya para abajo
+        _sprite.setPosition(_sprite.getPosition().x, 600 - (_sprite.getGlobalBounds().height));//que no se vaya para abajo
     }
 
 
