@@ -206,41 +206,51 @@ void Tamagotchi::jugar()
 
         Horario horario;
 
-        dibujarSalud(window); //dibuja los corazones
+
+        if(horario.getMinuto() % 3 == 0) //cambia el estado
+        {
+            _salud = 16; //enfermo
+        }
 
         Higiene h;
 
         if(horario.getMinuto() % 3 == 0) //cambia el estado
         {
             _higiene = false;
+
         }
 
         h.TipoHigiene(_higiene); //si esta limpio o sucio
 
-        window.draw(h); //dibuja perfume si esta limpio o emogie si esta sucio
 
         Hambre ha;
 
         if(horario.getMinuto() % 3 == 0)
         {
             _hambriento = false;
+
         }
 
         ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
-        window.draw(ha); //dibuja plato lleno si esta satisfecho y plato vacio si tiene hambre
 
         Entretenimiento e;
 
         if(horario.getMinuto() % 3 == 0)
         {
             _entretenimiento = false;
+
         }
 
         e.TipoEntretenimiento(_entretenimiento);
-        window.draw(e);
 
         Suenio s;
         s.TipoSuenio(_suenio);
+
+
+        dibujarSalud(window); //dibuja los corazones
+        window.draw(h); //dibuja perfume si esta limpio o emogie si esta sucio
+        window.draw(ha); //dibuja plato lleno si esta satisfecho y plato vacio si tiene hambre
+        window.draw(e);
         window.draw(s);
 
         update();
