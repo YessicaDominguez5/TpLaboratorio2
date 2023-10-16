@@ -202,17 +202,11 @@
 1695823171 source:c:\users\urano\documents\utn\lab de computacion 2\tpgit\tplaboratorio2\src\tamagotchipollito.cpp
 	"TamagotchiPollito.h"
 
-1697327973 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\main.cpp
-	<iostream>
-	<SFML/Graphics.hpp>
-	"Tamagotchi.h"
+1697414854 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\main.cpp
 	"Funciones.h"
-	"TamagotchiPerro.h"
-	"TamagotchiGato.h"
-	"TamagotchiPollito.h"
 	"rlutil.h"
 
-1697327973 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
+1697414660 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -220,6 +214,7 @@
 	<string>
 	"rlutil.h"
 	"Salud.h"
+	"horario.h"
 
 1697327973 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\funciones.h
 	<iostream>
@@ -261,7 +256,7 @@
 1697327973 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
-1697332536 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1697414660 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 	"Salud.h"
 	"Higiene.h"
@@ -269,7 +264,7 @@
 	"Entretenimiento.h"
 	"suenio.h"
 
-1697327973 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
+1697379706 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
 	"TamagotchiGato.h"
 
 1697327973 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchiperro.cpp

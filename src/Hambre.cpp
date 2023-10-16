@@ -18,10 +18,7 @@ void Hambre::TipoHambre(bool Hambre)
         _textureHambre.loadFromFile("hambre.png");
         _spriteHambre.setTexture(_textureHambre);
 
-
-
     }
-
 
 }
 

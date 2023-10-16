@@ -6,6 +6,7 @@
 #include <string>
 #include "rlutil.h"
 #include "Salud.h"
+#include "horario.h"
 
 
 class Tamagotchi : public sf::Drawable
@@ -37,20 +38,19 @@ public:
     void dibujarSalud(sf::RenderWindow& window);
     void cantidadCorazoness(sf::RenderWindow&,int cant);
 
+
     virtual void jugar();
     void update();
     void limpiar();
 
 
-
-    // virtual void Saludar();
     // virtual void Alimentarse();
 
 
 protected:
 
     int _tipoDeMascota; //Perro, Gato o pollito
-    char _mascota[6];
+    char _mascota[8];
     char _nombre[15];
     int _salud;
     Salud _estadoSalud[6];
@@ -62,6 +62,8 @@ protected:
     sf::Sprite _sprite;
     sf::Texture _texture;
     sf::Vector2f _velocity;
+    Horario _horario;
+
 
 
 

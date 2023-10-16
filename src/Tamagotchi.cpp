@@ -20,6 +20,7 @@ Tamagotchi::Tamagotchi()
     _sprite.setOrigin(_sprite.getGlobalBounds().width/2, _sprite.getGlobalBounds().height); //Para dar vuelta la imagen seleccionando el punto en donde va a agarrar para invertirla
     //getGlobalBounds trae los bordes del sprite, ancho del la imagen dividido 2 para que tome como punto la mitad de la imagen
     _sprite.setPosition(300,200);
+    _horario = Horario();
 }
 
 void Tamagotchi::setTipoDeMascota(int tipo)
@@ -174,6 +175,8 @@ void Tamagotchi::petCreator(int tipoDeMascota) //Recibe el tipo de mascota desde
     strcpy(_nombre,petName);
 }
 
+
+
 void Tamagotchi::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
     target.draw(_sprite, states);
@@ -201,19 +204,38 @@ void Tamagotchi::jugar()
         window.clear();
         window.draw(_sprite); //dibuja al personaje
 
+        Horario horario;
+
         dibujarSalud(window); //dibuja los corazones
 
         Higiene h;
+
+        if(horario.getMinuto() % 3 == 0) //cambia el estado
+        {
+            _higiene = false;
+        }
 
         h.TipoHigiene(_higiene); //si esta limpio o sucio
 
         window.draw(h); //dibuja perfume si esta limpio o emogie si esta sucio
 
         Hambre ha;
+
+        if(horario.getMinuto() % 3 == 0)
+        {
+            _hambriento = false;
+        }
+
         ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
         window.draw(ha); //dibuja plato lleno si esta satisfecho y plato vacio si tiene hambre
 
         Entretenimiento e;
+
+        if(horario.getMinuto() % 3 == 0)
+        {
+            _entretenimiento = false;
+        }
+
         e.TipoEntretenimiento(_entretenimiento);
         window.draw(e);
 
@@ -222,6 +244,8 @@ void Tamagotchi::jugar()
         window.draw(s);
 
         update();
+
+
         window.display();
     }
 
