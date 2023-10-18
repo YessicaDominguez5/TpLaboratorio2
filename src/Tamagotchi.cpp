@@ -253,6 +253,8 @@ void Tamagotchi::jugar()
         window.draw(e);
         window.draw(s);
 
+        dibujarAcciones(window);
+
         update();
 
 
@@ -366,17 +368,46 @@ void Tamagotchi::dibujarSalud(sf::RenderWindow& window)
         }
     }
 
+    void Tamagotchi::dibujarAcciones(sf::RenderWindow& window)
+    {
+
+     sf::Font font;
+    font.loadFromFile("Valoon.ttf");
+
+    sf::Text textAlimentar,textJugarSnake,textDormir, textLimpiar, textCurar;
+    std::string Alimentar = "Alimentar", JugarSnake = "Jugar", Dormir = "Dormir", Limpiar = "Limpiar", Curar = "Curar";
+
+    textAlimentar.setFont(font);
+    textJugarSnake.setFont(font);
+    textDormir.setFont(font);
+    textLimpiar.setFont(font);
+    textCurar.setFont(font);
+
+    textAlimentar.setColor(sf::Color::Yellow);
+    textJugarSnake.setColor(sf::Color::Magenta);
+    textDormir.setColor(sf::Color::Red);
+    textLimpiar.setColor(sf::Color::Blue);
+    textCurar.setColor(sf::Color::Green);
+
+    textAlimentar.setPosition(1,550);
+    textJugarSnake.setPosition(200,550);
+    textDormir.setPosition(350,550);
+    textLimpiar.setPosition(500,550);
+    textCurar.setPosition(680,550);
+
+    textAlimentar.setString(Alimentar);
+    textJugarSnake.setString(JugarSnake);
+    textDormir.setString(Dormir);
+    textLimpiar.setString(Limpiar);
+    textCurar.setString(Curar);
+
+    window.draw(textAlimentar);
+    window.draw(textJugarSnake);
+    window.draw(textDormir);
+    window.draw(textLimpiar);
+    window.draw(textCurar);
 
 
 
 
-
-
-
-//void limpiar();
-
-
-//virtual void saludar();
-//virtual void alimentarse();*/
-
-
+    }

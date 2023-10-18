@@ -37,6 +37,7 @@ public:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     void dibujarSalud(sf::RenderWindow& window);
     void cantidadCorazoness(sf::RenderWindow&,int cant);
+    void dibujarAcciones(sf::RenderWindow&);
 
 
     virtual void jugar();
