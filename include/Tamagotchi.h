@@ -7,6 +7,16 @@
 #include "rlutil.h"
 #include "Salud.h"
 #include "horario.h"
+#include "Higiene.h"
+#include "Hambre.h"
+#include "Entretenimiento.h"
+#include "Suenio.h"
+#include "BotonRojo.h"
+#include "BotonAzul.h"
+#include "BotonVerde.h"
+#include "BotonNegro.h"
+#include "BotonGris.h"
+
 
 
 class Tamagotchi : public sf::Drawable

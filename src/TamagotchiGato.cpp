@@ -9,7 +9,7 @@ TamagotchiGato::TamagotchiGato():Tamagotchi()
 
 void TamagotchiGato::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
-    target.draw(_sprite);
+    target.draw(_sprite, states);
 }
 
 void TamagotchiGato::jugar()

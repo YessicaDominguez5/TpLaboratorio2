@@ -1,9 +1,5 @@
 #include "Tamagotchi.h"
-#include "Salud.h"
-#include "Higiene.h"
-#include "Hambre.h"
-#include "Entretenimiento.h"
-#include "suenio.h"
+
 
 
 Tamagotchi::Tamagotchi()
@@ -253,7 +249,21 @@ void Tamagotchi::jugar()
         window.draw(e);
         window.draw(s);
 
+        BotonRojo br;
+        BotonAzul ba;
+        BotonVerde bv;
+        BotonGris bg;
+        BotonNegro bn;
+
+        window.draw(br);
+        window.draw(ba);
+        window.draw(bv);
+        window.draw(bg);
+        window.draw(bn);
+
         dibujarAcciones(window);
+
+
 
         update();
 

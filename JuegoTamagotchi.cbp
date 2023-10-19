@@ -41,6 +41,11 @@
 			<Add library="SFML/lib/libsfml-window-d.a" />
 			<Add directory="SFML/lib" />
 		</Linker>
+		<Unit filename="include/BotonAzul.h" />
+		<Unit filename="include/BotonGris.h" />
+		<Unit filename="include/BotonNegro.h" />
+		<Unit filename="include/BotonRojo.h" />
+		<Unit filename="include/BotonVerde.h" />
 		<Unit filename="include/Entretenimiento.h" />
 		<Unit filename="include/Funciones.h" />
 		<Unit filename="include/Hambre.h" />
@@ -55,8 +60,12 @@
 		<Unit filename="include/fechahorario.h" />
 		<Unit filename="include/horario.h" />
 		<Unit filename="include/rlutil.h" />
-		<Unit filename="include/suenio.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/BotonAzul.cpp" />
+		<Unit filename="src/BotonGris.cpp" />
+		<Unit filename="src/BotonNegro.cpp" />
+		<Unit filename="src/BotonRojo.cpp" />
+		<Unit filename="src/BotonVerde.cpp" />
 		<Unit filename="src/Entretenimiento.cpp" />
 		<Unit filename="src/Funciones.cpp" />
 		<Unit filename="src/Hambre.cpp" />

@@ -9,7 +9,7 @@ TamagotchiPollito::TamagotchiPollito():Tamagotchi()
 
 void TamagotchiPollito::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
-    target.draw(_sprite);
+    target.draw(_sprite, states);
 }
 
 void TamagotchiPollito::jugar()
