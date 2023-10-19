@@ -263,6 +263,11 @@ void Tamagotchi::jugar()
 
         dibujarAcciones(window);
 
+        if(isCollision(br))
+        {
+        Alimentar();
+        }
+
 
 
         update();
@@ -418,6 +423,14 @@ void Tamagotchi::dibujarSalud(sf::RenderWindow& window)
     window.draw(textCurar);
 
 
-
-
     }
+
+sf::FloatRect Tamagotchi::getBounds()const
+{
+return _sprite.getGlobalBounds();
+}
+
+void Tamagotchi::Alimentar()
+{
+
+}

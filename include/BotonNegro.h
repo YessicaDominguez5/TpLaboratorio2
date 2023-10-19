@@ -1,11 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Collisionable.h"
 
-class BotonNegro : public sf::Drawable
+class BotonNegro : public sf::Drawable, public Collisionable
 {
 public:
     BotonNegro();
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
+    sf::FloatRect getBounds()const override;
 
 
 private:

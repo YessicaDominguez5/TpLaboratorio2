@@ -11,3 +11,8 @@ void BotonAzul::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
     target.draw(_spriteBotonAzul, states);
 }
+
+sf::FloatRect BotonAzul::getBounds()const
+{
+return _spriteBotonAzul.getGlobalBounds();
+}

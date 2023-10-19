@@ -46,6 +46,7 @@
 		<Unit filename="include/BotonNegro.h" />
 		<Unit filename="include/BotonRojo.h" />
 		<Unit filename="include/BotonVerde.h" />
+		<Unit filename="include/Collisionable.h" />
 		<Unit filename="include/Entretenimiento.h" />
 		<Unit filename="include/Funciones.h" />
 		<Unit filename="include/Hambre.h" />
@@ -66,6 +67,7 @@
 		<Unit filename="src/BotonNegro.cpp" />
 		<Unit filename="src/BotonRojo.cpp" />
 		<Unit filename="src/BotonVerde.cpp" />
+		<Unit filename="src/Collisionable.cpp" />
 		<Unit filename="src/Entretenimiento.cpp" />
 		<Unit filename="src/Funciones.cpp" />
 		<Unit filename="src/Hambre.cpp" />

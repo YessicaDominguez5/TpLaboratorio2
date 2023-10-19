@@ -16,10 +16,11 @@
 #include "BotonVerde.h"
 #include "BotonNegro.h"
 #include "BotonGris.h"
+#include "Collisionable.h"
 
 
 
-class Tamagotchi : public sf::Drawable
+class Tamagotchi : public sf::Drawable, public Collisionable
 {
 public:
     Tamagotchi();
@@ -48,14 +49,13 @@ public:
     void dibujarSalud(sf::RenderWindow& window);
     void cantidadCorazoness(sf::RenderWindow&,int cant);
     void dibujarAcciones(sf::RenderWindow&);
+    sf::FloatRect getBounds()const override; //para colisiones
 
 
     virtual void jugar();
     void update();
     void limpiar();
-
-
-    // virtual void Alimentarse();
+    virtual void Alimentar();
 
 
 protected:

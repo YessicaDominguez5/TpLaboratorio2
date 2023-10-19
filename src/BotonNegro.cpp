@@ -11,3 +11,9 @@ void BotonNegro::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
     target.draw(_spriteBotonNegro, states);
 }
+
+
+sf::FloatRect BotonNegro::getBounds()const
+{
+return _spriteBotonNegro.getGlobalBounds();
+}
