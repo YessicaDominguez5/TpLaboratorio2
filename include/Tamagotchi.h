@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <cstring>
 #include <string>
+#include <ctime>
+#include <stdlib.h>
 #include "rlutil.h"
 #include "Salud.h"
 #include "horario.h"
@@ -17,6 +19,7 @@
 #include "BotonNegro.h"
 #include "BotonGris.h"
 #include "Collisionable.h"
+#include "Pizza.h"
 
 
 
@@ -55,7 +58,8 @@ public:
     virtual void jugar();
     void update();
     void limpiar();
-    virtual void Alimentar();
+    void Alimentar(sf::RenderWindow& window);
+    void Negarse(sf::RenderWindow& window, std::string negacion);
 
 
 protected:

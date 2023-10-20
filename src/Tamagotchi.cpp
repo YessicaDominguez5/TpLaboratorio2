@@ -1,7 +1,5 @@
 #include "Tamagotchi.h"
 
-
-
 Tamagotchi::Tamagotchi()
 {
     _tipoDeMascota = 0;
@@ -265,7 +263,73 @@ void Tamagotchi::jugar()
 
         if(isCollision(br))
         {
-        Alimentar();
+            if(_hambriento == false)
+            {
+               Alimentar(window);
+
+            }
+            else
+            {
+                std::string text = "NO TENGO HAMBRE, GRACIAS";
+
+                Negarse(window,text);
+            }
+        }
+        if(isCollision(ba))
+        {
+            if(_entretenimiento == false)
+            {
+                //JugarSnake();
+
+            }
+            else
+            {
+                std::string text = "NO ESTOY ABURRIDO";
+
+                Negarse(window,text);
+            }
+        }
+        if(isCollision(bv))
+        {
+            if(_higiene == false)
+            {
+                //limpiar();
+
+            }
+            else
+            {
+                std::string text = "NO ME TOCA BAÑARME!";
+
+                Negarse(window,text);
+            }
+        }
+        if(isCollision(bn))
+        {
+            if(_suenio == false)
+            {
+                //Dormir();
+
+            }
+            else
+            {
+                std::string text = "NO TENGO GANAS DE DORMIR";
+
+                Negarse(window,text);
+            }
+        }
+        if(isCollision(bg))
+        {
+            if(_salud < 70)
+            {
+                //Curar();
+
+            }
+            else
+            {
+                std::string text = "ME SIENTO BIEN POR AHORA";
+
+                Negarse(window,text);
+            }
         }
 
 
@@ -349,7 +413,7 @@ void Tamagotchi::dibujarSalud(sf::RenderWindow& window)
     }
     else if(_salud < 100 && _salud >= 70)//saludable
     {
-       int cant = 4;
+        int cant = 4;
         cantidadCorazoness(window,cant);
     }
     else if(_salud >= 50 && _salud < 70)//regular
@@ -369,24 +433,24 @@ void Tamagotchi::dibujarSalud(sf::RenderWindow& window)
     }
 
 
-    }
-    void Tamagotchi::cantidadCorazoness(sf::RenderWindow& window ,int cant)
+}
+void Tamagotchi::cantidadCorazoness(sf::RenderWindow& window,int cant)
+{
+    int posX = 25; /// Posicion X inicial (para el primer corazon)
+
+    for(int i = 0; i < cant; i++)  /// Como tenes la vida completa, tenemos que dibujar 5 corazones
     {
-         int posX = 25; /// Posicion X inicial (para el primer corazon)
-
-            for(int i = 0; i < cant; i++)  /// Como tenes la vida completa, tenemos que dibujar 5 corazones
-        {
-            _estadoSalud[i].SetearImagen();
-            _estadoSalud[i].setearPosicion(posX);/// Posicion del corazon
-            window.draw(_estadoSalud[i].getSprite());
-            posX+=30;
-        }
+        _estadoSalud[i].SetearImagen();
+        _estadoSalud[i].setearPosicion(posX);/// Posicion del corazon
+        window.draw(_estadoSalud[i].getSprite());
+        posX+=30;
     }
+}
 
-    void Tamagotchi::dibujarAcciones(sf::RenderWindow& window)
-    {
+void Tamagotchi::dibujarAcciones(sf::RenderWindow& window)
+{
 
-     sf::Font font;
+    sf::Font font;
     font.loadFromFile("Valoon.ttf");
 
     sf::Text textAlimentar,textJugarSnake,textDormir, textLimpiar, textCurar;
@@ -423,14 +487,43 @@ void Tamagotchi::dibujarSalud(sf::RenderWindow& window)
     window.draw(textCurar);
 
 
-    }
+}
 
 sf::FloatRect Tamagotchi::getBounds()const
 {
-return _sprite.getGlobalBounds();
+    return _sprite.getGlobalBounds();
 }
 
-void Tamagotchi::Alimentar()
+void Tamagotchi::Negarse(sf::RenderWindow& window, std::string negacion)
 {
+    sf::Font font;
+    font.loadFromFile("Valoon.ttf");
+
+    sf::Text texto;
+
+    texto.setFont(font);
+    texto.setColor(sf::Color::White);
+    texto.setPosition(350,200);
+    texto.setString(negacion);
+    window.draw(texto);
+}
+
+
+void Tamagotchi::Alimentar(sf::RenderWindow& window)
+{
+    Pizza pizza;
+
+
+    pizza.respawn();
+
+    int pizzasRecolectadas = 0;
+
+    if(isCollision(pizza) && pizzasRecolectadas < 5)
+    {
+        pizza.respawn();
+        pizzasRecolectadas++;
+    }
+
+    window.draw(pizza);
 
 }

@@ -17,3 +17,7 @@ sf::FloatRect BotonNegro::getBounds()const
 {
 return _spriteBotonNegro.getGlobalBounds();
 }
+
+sf::Sprite BotonNegro::getSpriteBtnNegro(){
+    return _spriteBotonNegro;
+}

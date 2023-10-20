@@ -201,12 +201,14 @@
 	"Funciones.h"
 	"rlutil.h"
 
-1697676323 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
+1697769722 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
 	<cstring>
 	<string>
+	<ctime>
+	<stdlib.h>
 	"rlutil.h"
 	"Salud.h"
 	"horario.h"
@@ -220,6 +222,7 @@
 	"BotonNegro.h"
 	"BotonGris.h"
 	"Collisionable.h"
+	"Pizza.h"
 
 1697662055 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\funciones.h
 	<iostream>
@@ -258,7 +261,7 @@
 1697662055 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
-1697677605 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1697770019 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1697669125 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
@@ -1216,38 +1219,38 @@
 1697672977 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\boton.h
 	<SFML/Graphics.hpp>
 
-1697675654 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonazul.cpp
+1697767233 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonazul.cpp
 	"BotonAzul.h"
 
-1697675455 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonazul.h
+1697767022 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonazul.h
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
-1697675577 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botongris.cpp
+1697767250 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botongris.cpp
 	"BotonGris.h"
 
-1697675453 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botongris.h
+1697767106 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botongris.h
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
-1697677895 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonnegro.cpp
+1697767296 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonnegro.cpp
 	"BotonNegro.h"
 
-1697675456 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonnegro.h
+1697767185 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonnegro.h
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
-1697675611 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonrojo.cpp
+1697767387 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonrojo.cpp
 	"BotonRojo.h"
 
-1697675454 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonrojo.h
+1697767326 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonrojo.h
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
-1697675671 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonverde.cpp
+1697767420 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonverde.cpp
 	"BotonVerde.h"
 
-1697675457 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonverde.h
+1697767352 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonverde.h
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
@@ -1256,4 +1259,12 @@
 
 1697675137 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\collisionable.cpp
 	"Collisionable.h"
+
+1697761433 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\pizza.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1697769722 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\pizza.cpp
+	"Pizza.h"
 

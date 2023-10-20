@@ -16,3 +16,6 @@ sf::FloatRect BotonAzul::getBounds()const
 {
 return _spriteBotonAzul.getGlobalBounds();
 }
+sf::Sprite BotonAzul::getSpriteBtnAzul(){
+    return _spriteBotonAzul;
+}

@@ -16,3 +16,7 @@ sf::FloatRect BotonVerde::getBounds()const
 {
 return _spriteBotonVerde.getGlobalBounds();
 }
+
+sf::Sprite BotonVerde::getSpriteBtnVerde(){
+    return _spriteBotonVerde;
+}
