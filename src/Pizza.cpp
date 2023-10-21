@@ -5,6 +5,7 @@ Pizza::Pizza()
    _texturePizza.loadFromFile("pizza.png");
     _spritePizza.setTexture(_texturePizza);
     _spritePizza.setOrigin(_spritePizza.getGlobalBounds().width/2, _spritePizza.getGlobalBounds().height/2);
+    _spritePizza.setPosition(350,350);
 }
 
 void Pizza::draw(sf::RenderTarget& target, sf::RenderStates states)const
@@ -22,5 +23,5 @@ void Pizza::respawn()
 {
      std::srand((unsigned)std::time(0));
 
-     _spritePizza.setPosition(std::rand()%500 + _spritePizza.getGlobalBounds().width, std::rand()%500 + _spritePizza.getGlobalBounds().height);
+     _spritePizza.setPosition(std::rand()%700 + _spritePizza.getGlobalBounds().width, std::rand()%500 + _spritePizza.getGlobalBounds().height);
 }

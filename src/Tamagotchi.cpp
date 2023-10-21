@@ -223,6 +223,9 @@ void Tamagotchi::jugar()
         {
             _hambriento = false;
 
+        } else {
+
+
         }
 
         ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
@@ -265,8 +268,9 @@ void Tamagotchi::jugar()
         {
             if(_hambriento == false)
             {
-               Alimentar(window);
-
+                _hambriento = Alimentar(window);
+                _sprite.setPosition(300,200);
+                window.draw(ha);
             }
             else
             {
@@ -334,7 +338,7 @@ void Tamagotchi::jugar()
 
 
 
-        update();
+        update(120);
 
 
         window.display();
@@ -342,7 +346,7 @@ void Tamagotchi::jugar()
 
 }
 
-void Tamagotchi::update()
+void Tamagotchi::update(int valorTop)
 {
 
     _velocity = {0,0};
@@ -384,9 +388,9 @@ void Tamagotchi::update()
         _sprite.setPosition(_sprite.getGlobalBounds().width,_sprite.getPosition().y);
     }
 
-    if(_sprite.getGlobalBounds().top < 120)
+    if(_sprite.getGlobalBounds().top < valorTop)
     {
-        _sprite.setPosition(_sprite.getPosition().x, 120); //que no se vaya para arriba
+        _sprite.setPosition(_sprite.getPosition().x, valorTop); //que no se vaya para arriba
     }
 
     if(_sprite.getGlobalBounds().left + _sprite.getGlobalBounds().width > 800)
@@ -509,21 +513,58 @@ void Tamagotchi::Negarse(sf::RenderWindow& window, std::string negacion)
 }
 
 
-void Tamagotchi::Alimentar(sf::RenderWindow& window)
+bool Tamagotchi::Alimentar(sf::RenderWindow& window)
 {
+
     Pizza pizza;
-
-
-    pizza.respawn();
-
     int pizzasRecolectadas = 0;
 
-    if(isCollision(pizza) && pizzasRecolectadas < 5)
+    /// while pizzasReconectadas < 6 => Este codigo se va a ejecutar todo el tiempo hasta
+    /// que recolectes 5 pizzas para alimentar el tamagotchi.
+
+    _sprite.setPosition(300,1);
+
+
+    sf::Font font;
+    font.loadFromFile("Valoon.ttf");
+
+    sf::Text texto;
+
+    texto.setFont(font);
+    texto.setColor(sf::Color::White);
+    texto.setPosition(350,200);
+    pizza.respawn();
+
+
+    while(pizzasRecolectadas < 5)
     {
-        pizza.respawn();
-        pizzasRecolectadas++;
+
+
+        window.clear();
+
+        while(isCollision(pizza))
+        {
+            pizza.respawn();
+            pizzasRecolectadas++;
+        }
+
+        window.draw(_sprite);
+        window.draw(pizza);
+        texto.setString(std::to_string(pizzasRecolectadas));
+        window.draw(texto);
+
+        update(0);
+        window.display();
+
     }
 
-    window.draw(pizza);
+            return true;
 
 }
+
+
+
+
+
+
+

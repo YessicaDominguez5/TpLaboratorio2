@@ -56,9 +56,9 @@ public:
 
 
     virtual void jugar();
-    void update();
+    void update(int valorTop);
     void limpiar();
-    void Alimentar(sf::RenderWindow& window);
+    bool Alimentar(sf::RenderWindow& window);
     void Negarse(sf::RenderWindow& window, std::string negacion);
 
 

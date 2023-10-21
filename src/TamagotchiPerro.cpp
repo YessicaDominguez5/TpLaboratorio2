@@ -4,6 +4,7 @@ TamagotchiPerro::TamagotchiPerro():Tamagotchi()
 {
     _texture.loadFromFile("TPerro.png");
     _sprite.setTexture(_texture);
+
 }
 
 
