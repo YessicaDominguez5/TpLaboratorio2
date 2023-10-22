@@ -21,7 +21,7 @@ sf::FloatRect Pizza::getBounds()const
 
 void Pizza::respawn()
 {
-     std::srand((unsigned)std::time(0));
+
 
      _spritePizza.setPosition(std::rand()%700 + _spritePizza.getGlobalBounds().width, std::rand()%500 + _spritePizza.getGlobalBounds().height);
 }

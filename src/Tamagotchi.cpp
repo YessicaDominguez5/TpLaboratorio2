@@ -184,6 +184,8 @@ void Tamagotchi::jugar()
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "TAMAGOTCHI");
     window.setFramerateLimit(60); //Limita los fps por segundo(velocidad de movimiento del sprite)
+    bool alimentado = false;
+
 
 
     while (window.isOpen()) //Game Loop
@@ -199,6 +201,7 @@ void Tamagotchi::jugar()
         window.draw(_sprite); //dibuja al personaje
 
         Horario horario;
+
 
 
         if(horario.getMinuto() % 3 == 0) //cambia el estado
@@ -219,13 +222,17 @@ void Tamagotchi::jugar()
 
         Hambre ha;
 
-        if(horario.getMinuto() % 3 == 0)
+        if(horario.getMinuto() % 3 == 0 && alimentado == false)
         {
             _hambriento = false;
 
-        } else {
-
-
+        } else if(horario.getMinuto() % 3 == 0 && alimentado == true)
+        {
+            _hambriento = true;
+        }
+        else
+        {
+         alimentado = false;
         }
 
         ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
@@ -269,8 +276,12 @@ void Tamagotchi::jugar()
             if(_hambriento == false)
             {
                 _hambriento = Alimentar(window);
+                alimentado = true;
                 _sprite.setPosition(300,200);
-                window.draw(ha);
+
+
+
+
             }
             else
             {
@@ -532,7 +543,8 @@ bool Tamagotchi::Alimentar(sf::RenderWindow& window)
 
     texto.setFont(font);
     texto.setColor(sf::Color::White);
-    texto.setPosition(350,200);
+    texto.setPosition(350,10);
+
     pizza.respawn();
 
 
@@ -542,23 +554,29 @@ bool Tamagotchi::Alimentar(sf::RenderWindow& window)
 
         window.clear();
 
-        while(isCollision(pizza))
+        if(isCollision(pizza))
         {
-            pizza.respawn();
             pizzasRecolectadas++;
+            pizza.respawn();
+
+            if(pizzasRecolectadas == 5)
+            {
+
+                return true;
+            }
         }
 
+        update(0);
+
+        texto.setString(std::to_string(pizzasRecolectadas));
         window.draw(_sprite);
         window.draw(pizza);
-        texto.setString(std::to_string(pizzasRecolectadas));
         window.draw(texto);
 
-        update(0);
         window.display();
 
     }
 
-            return true;
 
 }
 
