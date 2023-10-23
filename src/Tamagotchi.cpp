@@ -187,6 +187,7 @@ void Tamagotchi::jugar()
     bool alimentado = false;
     bool curado = false;
     bool baniado = false;
+    bool descansado = false;
 
 
 
@@ -213,13 +214,13 @@ void Tamagotchi::jugar()
         }
         else if(horario.getMinuto() % 3 == 0 && curado == true)
         {
-           _salud = 5;
-           dibujarSalud(window);
+            _salud = 5;
+            dibujarSalud(window);
         }
         else
         {
-         curado = false;
-        dibujarSalud(window);
+            curado = false;
+            dibujarSalud(window);
         }
 
         Higiene h;
@@ -229,7 +230,8 @@ void Tamagotchi::jugar()
             _higiene = false;
             dibujarSalud(window);
 
-        } else if(horario.getMinuto() % 3 == 0 && baniado == true)
+        }
+        else if(horario.getMinuto() % 3 == 0 && baniado == true)
         {
             _higiene = true;
             _salud++;
@@ -237,8 +239,8 @@ void Tamagotchi::jugar()
         }
         else
         {
-         baniado = false;
-         dibujarSalud(window);
+            baniado = false;
+            dibujarSalud(window);
         }
 
         h.TipoHigiene(_higiene); //si esta limpio o sucio
@@ -251,7 +253,8 @@ void Tamagotchi::jugar()
             _hambriento = false;
             dibujarSalud(window);
 
-        } else if(horario.getMinuto() % 3 == 0 && alimentado == true)
+        }
+        else if(horario.getMinuto() % 3 == 0 && alimentado == true)
         {
             _hambriento = true;
             _salud++;
@@ -259,8 +262,8 @@ void Tamagotchi::jugar()
         }
         else
         {
-         alimentado = false;
-         dibujarSalud(window);
+            alimentado = false;
+            dibujarSalud(window);
         }
 
         ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
@@ -277,10 +280,22 @@ void Tamagotchi::jugar()
 
         Suenio s;
 
-        if(horario.getMinuto() % 3 == 0)
+        if(horario.getMinuto() % 3 == 0 && descansado == false)
         {
             _suenio = false;
+            dibujarSalud(window);
 
+        }
+        else if(horario.getMinuto() % 3 == 0 && descansado == true)
+        {
+            _suenio = true;
+            _salud++;
+            dibujarSalud(window);
+        }
+        else
+        {
+            descansado = false;
+            dibujarSalud(window);
         }
         s.TipoSuenio(_suenio);
 
@@ -341,7 +356,7 @@ void Tamagotchi::jugar()
         {
             if(_higiene == false)
             {
-                _higiene = limpiar(window);
+                _higiene = Limpiar(window);
                 baniado = true;
                 _sprite.setPosition(300,200);
 
@@ -357,7 +372,9 @@ void Tamagotchi::jugar()
         {
             if(_suenio == false)
             {
-                //Dormir();
+                _suenio = Dormir(window);
+                descansado = true;
+                _sprite.setPosition(300,200);
 
             }
             else
@@ -614,7 +631,7 @@ bool Tamagotchi::Alimentar(sf::RenderWindow& window)
 
     }
 
-pizza.~Pizza();
+    pizza.~Pizza();
 }
 
 int Tamagotchi::Curar(sf::RenderWindow& window)
@@ -671,7 +688,7 @@ int Tamagotchi::Curar(sf::RenderWindow& window)
 
 }
 
-bool Tamagotchi::limpiar(sf::RenderWindow& window)
+bool Tamagotchi::Limpiar(sf::RenderWindow& window)
 {
 
     Jabon jabon;
@@ -723,6 +740,28 @@ bool Tamagotchi::limpiar(sf::RenderWindow& window)
 
     jabon.~Jabon();
 
+}
+
+bool Tamagotchi::Dormir(sf::RenderWindow& window)
+{
+    sf::Sprite _spriteDormilon;
+    sf::Texture _textureDormilon;
+    Horario h;
+
+    _textureDormilon.loadFromFile("dormilon.png");
+    _spriteDormilon.setTexture(_textureDormilon);
+    _spriteDormilon.setOrigin(_spriteDormilon.getGlobalBounds().width/2, _spriteDormilon.getGlobalBounds().height/2);
+    _spriteDormilon.setPosition(350,350);
+
+
+
+    window.clear();
+    window.draw(_spriteDormilon);
+    window.display();
+    Sleep(5000);
+
+
+    return true;
 }
 
 

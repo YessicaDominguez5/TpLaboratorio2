@@ -206,7 +206,7 @@
 	"Funciones.h"
 	"rlutil.h"
 
-1698021585 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
+1698028161 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -214,6 +214,7 @@
 	<string>
 	<ctime>
 	<stdlib.h>
+	<windows.h>
 	"rlutil.h"
 	"Salud.h"
 	"horario.h"
@@ -268,7 +269,7 @@
 1697995494 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
-1698021908 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1698028180 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1697995494 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp

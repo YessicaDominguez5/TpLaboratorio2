@@ -6,6 +6,7 @@
 #include <string>
 #include <ctime>
 #include <stdlib.h>
+#include <windows.h>
 #include "rlutil.h"
 #include "Salud.h"
 #include "horario.h"
@@ -59,8 +60,10 @@ public:
 
     virtual void jugar();
     void update(int valorTop);
-    bool limpiar(sf::RenderWindow& window);
+    bool Limpiar(sf::RenderWindow& window);
     bool Alimentar(sf::RenderWindow& window);
+    bool Dormir(sf::RenderWindow& window);
+
     int Curar(sf::RenderWindow& window);
     void Negarse(sf::RenderWindow& window, std::string negacion);
 
