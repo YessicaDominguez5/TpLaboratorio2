@@ -188,6 +188,7 @@ void Tamagotchi::jugar()
     bool curado = false;
     bool baniado = false;
     bool descansado = false;
+    bool banderaHorario = false;
 
 
 
@@ -206,41 +207,57 @@ void Tamagotchi::jugar()
         Horario horario;
 
 
-
-        if(horario.getMinuto() % 3 == 0 && curado == false) //cambia el estado
+        if(horario.getMinuto() % 3 == 0 && curado == false && banderaHorario == false) //cambia el estado
         {
             _salud = 1; //grave
             dibujarSalud(window);
+            banderaHorario = true;
+            alimentado = false;
+            curado = false;
+            baniado = false;
+            descansado = false;
+
         }
         else if(horario.getMinuto() % 3 == 0 && curado == true)
         {
             _salud = 5;
             dibujarSalud(window);
         }
-        else
+        else if(!(horario.getMinuto() % 3 == 0)&& curado == true)
         {
-            curado = false;
+            _salud = 5;
             dibujarSalud(window);
         }
+        else if(!(horario.getMinuto() % 3 == 0))
+        {
+            dibujarSalud(window);
+            banderaHorario = false;
+        }
+        else
+        {
+            dibujarSalud(window);
+        }
+
 
         Higiene h;
 
         if(horario.getMinuto() % 3 == 0 && baniado == false)
         {
             _higiene = false;
-            dibujarSalud(window);
+
 
         }
         else if(horario.getMinuto() % 3 == 0 && baniado == true)
         {
             _higiene = true;
-            _salud++;
-            dibujarSalud(window);
+            // _salud++;
+
         }
-        else
+        else if(!(horario.getMinuto() % 3 == 0)&& baniado == true)
         {
-            baniado = false;
-            dibujarSalud(window);
+            _higiene = true;
+            // _salud++;
+
         }
 
         h.TipoHigiene(_higiene); //si esta limpio o sucio
@@ -251,19 +268,20 @@ void Tamagotchi::jugar()
         if(horario.getMinuto() % 3 == 0 && alimentado == false)
         {
             _hambriento = false;
-            dibujarSalud(window);
+
 
         }
         else if(horario.getMinuto() % 3 == 0 && alimentado == true)
         {
             _hambriento = true;
-            _salud++;
-            dibujarSalud(window);
+            // _salud++;
+
         }
-        else
+        else if(!(horario.getMinuto() % 3 == 0)&& alimentado == true)
         {
-            alimentado = false;
-            dibujarSalud(window);
+            _hambriento = true;
+            // _salud++;
+
         }
 
         ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
@@ -283,19 +301,20 @@ void Tamagotchi::jugar()
         if(horario.getMinuto() % 3 == 0 && descansado == false)
         {
             _suenio = false;
-            dibujarSalud(window);
+
 
         }
         else if(horario.getMinuto() % 3 == 0 && descansado == true)
         {
             _suenio = true;
-            _salud++;
-            dibujarSalud(window);
+            //_salud++;
+
         }
-        else
+        else if(!(horario.getMinuto() % 3 == 0)&& descansado == true)
         {
-            descansado = false;
-            dibujarSalud(window);
+            _suenio = true;
+            // _salud++;
+
         }
         s.TipoSuenio(_suenio);
 
@@ -326,6 +345,7 @@ void Tamagotchi::jugar()
             {
                 _hambriento = Alimentar(window);
                 alimentado = true;
+                _salud++;
                 _sprite.setPosition(300,200);
 
             }
@@ -358,6 +378,7 @@ void Tamagotchi::jugar()
             {
                 _higiene = Limpiar(window);
                 baniado = true;
+                _salud++;
                 _sprite.setPosition(300,200);
 
             }
@@ -374,6 +395,7 @@ void Tamagotchi::jugar()
             {
                 _suenio = Dormir(window);
                 descansado = true;
+                _salud++;
                 _sprite.setPosition(300,200);
 
             }
