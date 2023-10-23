@@ -20,6 +20,8 @@
 #include "BotonGris.h"
 #include "Collisionable.h"
 #include "Pizza.h"
+#include "Vacuna.h"
+#include "Jabon.h"
 
 
 
@@ -57,8 +59,9 @@ public:
 
     virtual void jugar();
     void update(int valorTop);
-    void limpiar();
+    bool limpiar(sf::RenderWindow& window);
     bool Alimentar(sf::RenderWindow& window);
+    int Curar(sf::RenderWindow& window);
     void Negarse(sf::RenderWindow& window, std::string negacion);
 
 

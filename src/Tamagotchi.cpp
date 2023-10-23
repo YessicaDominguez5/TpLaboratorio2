@@ -5,7 +5,7 @@ Tamagotchi::Tamagotchi()
     _tipoDeMascota = 0;
     strcpy(_mascota,"");
     strcpy(_nombre,"");
-    _salud = 100;
+    _salud = 5;
     _higiene = true;
     _hambriento = true;
     _entretenimiento = true;
@@ -29,7 +29,7 @@ void Tamagotchi::setNombre(std::string nombre)
 
 void Tamagotchi::setSalud(int salud)
 {
-    if(salud <= 100 && salud >= 0)
+    if(salud <= 5 && salud >= 0)
     {
         _salud = salud;
 
@@ -185,6 +185,8 @@ void Tamagotchi::jugar()
     sf::RenderWindow window(sf::VideoMode(800, 600), "TAMAGOTCHI");
     window.setFramerateLimit(60); //Limita los fps por segundo(velocidad de movimiento del sprite)
     bool alimentado = false;
+    bool curado = false;
+    bool baniado = false;
 
 
 
@@ -204,17 +206,39 @@ void Tamagotchi::jugar()
 
 
 
-        if(horario.getMinuto() % 3 == 0) //cambia el estado
+        if(horario.getMinuto() % 3 == 0 && curado == false) //cambia el estado
         {
-            _salud = 16; //enfermo
+            _salud = 1; //grave
+            dibujarSalud(window);
+        }
+        else if(horario.getMinuto() % 3 == 0 && curado == true)
+        {
+           _salud = 5;
+           dibujarSalud(window);
+        }
+        else
+        {
+         curado = false;
+        dibujarSalud(window);
         }
 
         Higiene h;
 
-        if(horario.getMinuto() % 3 == 0) //cambia el estado
+        if(horario.getMinuto() % 3 == 0 && baniado == false)
         {
             _higiene = false;
+            dibujarSalud(window);
 
+        } else if(horario.getMinuto() % 3 == 0 && baniado == true)
+        {
+            _higiene = true;
+            _salud++;
+            dibujarSalud(window);
+        }
+        else
+        {
+         baniado = false;
+         dibujarSalud(window);
         }
 
         h.TipoHigiene(_higiene); //si esta limpio o sucio
@@ -225,14 +249,18 @@ void Tamagotchi::jugar()
         if(horario.getMinuto() % 3 == 0 && alimentado == false)
         {
             _hambriento = false;
+            dibujarSalud(window);
 
         } else if(horario.getMinuto() % 3 == 0 && alimentado == true)
         {
             _hambriento = true;
+            _salud++;
+            dibujarSalud(window);
         }
         else
         {
          alimentado = false;
+         dibujarSalud(window);
         }
 
         ha.TipoHambre(_hambriento); //si tiene hambre o esta satisfecho
@@ -248,6 +276,12 @@ void Tamagotchi::jugar()
         e.TipoEntretenimiento(_entretenimiento);
 
         Suenio s;
+
+        if(horario.getMinuto() % 3 == 0)
+        {
+            _suenio = false;
+
+        }
         s.TipoSuenio(_suenio);
 
 
@@ -279,9 +313,6 @@ void Tamagotchi::jugar()
                 alimentado = true;
                 _sprite.setPosition(300,200);
 
-
-
-
             }
             else
             {
@@ -290,6 +321,8 @@ void Tamagotchi::jugar()
                 Negarse(window,text);
             }
         }
+
+
         if(isCollision(ba))
         {
             if(_entretenimiento == false)
@@ -308,7 +341,9 @@ void Tamagotchi::jugar()
         {
             if(_higiene == false)
             {
-                //limpiar();
+                _higiene = limpiar(window);
+                baniado = true;
+                _sprite.setPosition(300,200);
 
             }
             else
@@ -334,9 +369,11 @@ void Tamagotchi::jugar()
         }
         if(isCollision(bg))
         {
-            if(_salud < 70)
+            if(_salud < 4)
             {
-                //Curar();
+                _salud = Curar(window);
+                curado = true;
+                _sprite.setPosition(300,200);
 
             }
             else
@@ -419,29 +456,29 @@ void Tamagotchi::update(int valorTop)
 void Tamagotchi::dibujarSalud(sf::RenderWindow& window)
 {
 
-    if(_salud == 100)//espetacular
+    if(_salud == 5)//espetacular
 
     {
         int cant = 5;
         cantidadCorazoness(window,cant);
 
     }
-    else if(_salud < 100 && _salud >= 70)//saludable
+    else if(_salud == 4)//saludable
     {
         int cant = 4;
         cantidadCorazoness(window,cant);
     }
-    else if(_salud >= 50 && _salud < 70)//regular
+    else if(_salud == 3)//regular
     {
         int cant = 3;
         cantidadCorazoness(window,cant);
     }
-    else if(_salud >= 15 && _salud < 50)//enfermo
+    else if(_salud == 2)//enfermo
     {
         int cant = 2;
         cantidadCorazoness(window,cant);
     }
-    else if(_salud > 0 && _salud < 15) //grave
+    else if(_salud == 1) //grave
     {
         int cant = 1;
         cantidadCorazoness(window,cant);
@@ -577,6 +614,114 @@ bool Tamagotchi::Alimentar(sf::RenderWindow& window)
 
     }
 
+pizza.~Pizza();
+}
+
+int Tamagotchi::Curar(sf::RenderWindow& window)
+{
+
+    Vacuna vacuna;
+    int vacunasRecolectadas = 0;
+
+    _sprite.setPosition(300,1);
+
+
+    sf::Font font;
+    font.loadFromFile("Valoon.ttf");
+
+    sf::Text texto;
+
+    texto.setFont(font);
+    texto.setColor(sf::Color::White);
+    texto.setPosition(350,10);
+
+    vacuna.respawn();
+
+
+    while(vacunasRecolectadas < 5)
+    {
+
+
+        window.clear();
+
+        if(isCollision(vacuna))
+        {
+            vacunasRecolectadas++;
+            vacuna.respawn();
+
+            if(vacunasRecolectadas == 5)
+            {
+
+                return 5;
+            }
+        }
+
+        update(0);
+
+        texto.setString(std::to_string(vacunasRecolectadas));
+        window.draw(_sprite);
+        window.draw(vacuna);
+        window.draw(texto);
+
+        window.display();
+
+    }
+
+    vacuna.~Vacuna();
+
+}
+
+bool Tamagotchi::limpiar(sf::RenderWindow& window)
+{
+
+    Jabon jabon;
+    int jabonesRecolectados = 0;
+
+    _sprite.setPosition(300,1);
+
+
+    sf::Font font;
+    font.loadFromFile("Valoon.ttf");
+
+    sf::Text texto;
+
+    texto.setFont(font);
+    texto.setColor(sf::Color::White);
+    texto.setPosition(350,10);
+
+    jabon.respawn();
+
+
+    while(jabonesRecolectados < 5)
+    {
+
+
+        window.clear();
+
+        if(isCollision(jabon))
+        {
+            jabonesRecolectados++;
+            jabon.respawn();
+
+            if(jabonesRecolectados == 5)
+            {
+
+                return true;
+            }
+        }
+
+        update(0);
+
+        texto.setString(std::to_string(jabonesRecolectados));
+        window.draw(_sprite);
+        window.draw(jabon);
+        window.draw(texto);
+
+        window.display();
+
+    }
+
+    jabon.~Jabon();
 
 }
 

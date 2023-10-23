@@ -8,6 +8,8 @@ Pizza::Pizza()
     _spritePizza.setPosition(350,350);
 }
 
+Pizza::~Pizza(){}
+
 void Pizza::draw(sf::RenderTarget& target, sf::RenderStates states)const
 {
     target.draw(_spritePizza, states);

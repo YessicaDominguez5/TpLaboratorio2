@@ -51,6 +51,7 @@
 		<Unit filename="include/Funciones.h" />
 		<Unit filename="include/Hambre.h" />
 		<Unit filename="include/Higiene.h" />
+		<Unit filename="include/Jabon.h" />
 		<Unit filename="include/Pizza.h" />
 		<Unit filename="include/Salud.h" />
 		<Unit filename="include/Suenio.h" />
@@ -58,6 +59,7 @@
 		<Unit filename="include/TamagotchiGato.h" />
 		<Unit filename="include/TamagotchiPerro.h" />
 		<Unit filename="include/TamagotchiPollito.h" />
+		<Unit filename="include/Vacuna.h" />
 		<Unit filename="include/fecha.h" />
 		<Unit filename="include/fechahorario.h" />
 		<Unit filename="include/horario.h" />
@@ -73,6 +75,7 @@
 		<Unit filename="src/Funciones.cpp" />
 		<Unit filename="src/Hambre.cpp" />
 		<Unit filename="src/Higiene.cpp" />
+		<Unit filename="src/Jabon.cpp" />
 		<Unit filename="src/Pizza.cpp" />
 		<Unit filename="src/Salud.cpp" />
 		<Unit filename="src/Suenio.cpp" />
@@ -80,6 +83,7 @@
 		<Unit filename="src/TamagotchiGato.cpp" />
 		<Unit filename="src/TamagotchiPerro.cpp" />
 		<Unit filename="src/TamagotchiPollito.cpp" />
+		<Unit filename="src/Vacuna.cpp" />
 		<Unit filename="src/fecha.cpp" />
 		<Unit filename="src/fechahorario.cpp" />
 		<Unit filename="src/horario.cpp" />

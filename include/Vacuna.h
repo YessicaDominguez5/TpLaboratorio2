@@ -4,18 +4,18 @@
 #include "Collisionable.h"
 
 
-class Pizza: public sf::Drawable, public Collisionable
+class Vacuna: public sf::Drawable, public Collisionable
 {
 public:
-    Pizza();
-    ~Pizza();
+    Vacuna();
+    ~Vacuna();
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     sf::FloatRect getBounds()const override; //para colisiones
     void respawn();
 
 private:
-    sf::Sprite _spritePizza;
-    sf::Texture _texturePizza;
+    sf::Sprite _spriteVacuna;
+    sf::Texture _textureVacuna;
 };
 
 

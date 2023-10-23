@@ -206,7 +206,7 @@
 	"Funciones.h"
 	"rlutil.h"
 
-1697995494 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
+1698021585 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -228,6 +228,8 @@
 	"BotonGris.h"
 	"Collisionable.h"
 	"Pizza.h"
+	"Vacuna.h"
+	"Jabon.h"
 
 1697995494 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\funciones.h
 	<iostream>
@@ -266,7 +268,7 @@
 1697995494 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
-1698014230 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1698021908 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1697995494 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
@@ -1245,10 +1247,10 @@
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
-1697995494 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonrojo.cpp
+1698019777 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\botonrojo.cpp
 	"BotonRojo.h"
 
-1697995494 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonrojo.h
+1698019770 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\botonrojo.h
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
@@ -1265,12 +1267,12 @@
 1697995494 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\collisionable.cpp
 	"Collisionable.h"
 
-1697995494 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\pizza.h
+1698019342 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\pizza.h
 	<SFML/Graphics.hpp>
 	<stdlib.h>
 	"Collisionable.h"
 
-1697995928 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\pizza.cpp
+1698019343 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\pizza.cpp
 	"Pizza.h"
 
 1697833889 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\botonrojo.h
@@ -1321,4 +1323,20 @@
 
 1697905022 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\pizza.cpp
 	"Pizza.h"
+
+1698019410 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\vacuna.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698019471 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\vacuna.cpp
+	"Vacuna.h"
+
+1698021415 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\jabon.cpp
+	"Jabon.h"
+
+1698019923 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\jabon.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
 
