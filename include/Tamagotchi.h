@@ -66,6 +66,8 @@ public:
 
     int Curar(sf::RenderWindow& window);
     void Negarse(sf::RenderWindow& window, std::string negacion);
+    void Morir(sf::RenderWindow& window);
+
 
 
 protected:

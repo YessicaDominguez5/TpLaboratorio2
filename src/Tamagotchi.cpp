@@ -161,12 +161,14 @@ void Tamagotchi::petCreator(int tipoDeMascota) //Recibe el tipo de mascota desde
     rlutil::locate(30,14);
     std::cout << "********************************************************************" << std::endl <<std::endl;
 
-    char petName[15];
+    std::string petName;
     rlutil::locate(60,16);
 
     std::cin >> petName;
 
-    strcpy(_nombre,petName);
+
+    strcpy(_nombre,petName.c_str());
+
 }
 
 
@@ -207,7 +209,7 @@ void Tamagotchi::jugar()
         Horario horario;
 
 
-        if(horario.getMinuto() % 3 == 0 && curado == false && banderaHorario == false) //cambia el estado
+        if(horario.getMinuto() % 3 == 0 && curado == false && banderaHorario == false) //cambia el estado //que entre una sola vez por minuto %3
         {
             _salud = 1; //grave
             dibujarSalud(window);
@@ -250,13 +252,12 @@ void Tamagotchi::jugar()
         else if(horario.getMinuto() % 3 == 0 && baniado == true)
         {
             _higiene = true;
-            // _salud++;
 
         }
         else if(!(horario.getMinuto() % 3 == 0)&& baniado == true)
         {
             _higiene = true;
-            // _salud++;
+
 
         }
 
@@ -274,13 +275,12 @@ void Tamagotchi::jugar()
         else if(horario.getMinuto() % 3 == 0 && alimentado == true)
         {
             _hambriento = true;
-            // _salud++;
+
 
         }
         else if(!(horario.getMinuto() % 3 == 0)&& alimentado == true)
         {
             _hambriento = true;
-            // _salud++;
 
         }
 
@@ -318,6 +318,11 @@ void Tamagotchi::jugar()
         }
         s.TipoSuenio(_suenio);
 
+        if(horario.getMinuto()%5 == 0 && _salud == 1 && _hambriento == false && _entretenimiento == false && _suenio == false && _higiene == false)
+        {
+                Morir(window);
+        }
+
 
         dibujarSalud(window); //dibuja los corazones
         window.draw(h); //dibuja perfume si esta limpio o emogie si esta sucio
@@ -345,7 +350,12 @@ void Tamagotchi::jugar()
             {
                 _hambriento = Alimentar(window);
                 alimentado = true;
-                _salud++;
+
+                if(_salud < 5)
+                {
+                    _salud++;
+
+                }
                 _sprite.setPosition(300,200);
 
             }
@@ -378,7 +388,11 @@ void Tamagotchi::jugar()
             {
                 _higiene = Limpiar(window);
                 baniado = true;
-                _salud++;
+                if(_salud < 5)
+                {
+                    _salud++;
+
+                }
                 _sprite.setPosition(300,200);
 
             }
@@ -395,7 +409,10 @@ void Tamagotchi::jugar()
             {
                 _suenio = Dormir(window);
                 descansado = true;
-                _salud++;
+                if(_salud < 5)
+                {
+                    _salud++;
+                }
                 _sprite.setPosition(300,200);
 
             }
@@ -768,7 +785,6 @@ bool Tamagotchi::Dormir(sf::RenderWindow& window)
 {
     sf::Sprite _spriteDormilon;
     sf::Texture _textureDormilon;
-    Horario h;
 
     _textureDormilon.loadFromFile("dormilon.png");
     _spriteDormilon.setTexture(_textureDormilon);
@@ -784,6 +800,35 @@ bool Tamagotchi::Dormir(sf::RenderWindow& window)
 
 
     return true;
+}
+void Tamagotchi::Morir(sf::RenderWindow& window)
+{
+    sf::Sprite _spriteMuerte;
+    sf::Texture _textureMuerte;
+
+    sf::Sprite _spriteGameOver;
+    sf::Texture _textureGameOver;
+
+    _textureMuerte.loadFromFile("muerte.png");
+    _spriteMuerte.setTexture(_textureMuerte);
+    _spriteMuerte.setOrigin(_spriteMuerte.getGlobalBounds().width/2, _spriteMuerte.getGlobalBounds().height/2);
+    _spriteMuerte.setPosition(370,150);
+
+
+    _textureGameOver.loadFromFile("gameover.png");
+    _spriteGameOver.setTexture(_textureGameOver);
+    _spriteGameOver.setOrigin(_spriteGameOver.getGlobalBounds().width/2, _spriteGameOver.getGlobalBounds().height/2);
+    _spriteGameOver.setPosition(370,350);
+
+
+    window.clear();
+    window.draw(_spriteMuerte);
+    window.draw(_spriteGameOver);
+    window.display();
+    Sleep(5000);
+
+    window.close();
+
 }
 
 

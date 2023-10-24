@@ -206,7 +206,7 @@
 	"Funciones.h"
 	"rlutil.h"
 
-1698097775 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
+1698106955 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -232,7 +232,7 @@
 	"Vacuna.h"
 	"Jabon.h"
 
-1698097775 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\funciones.h
+1698106941 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\funciones.h
 	<iostream>
 	<stdio.h>
 	"rlutil.h"
@@ -266,10 +266,10 @@
 	"Tamagotchi.h"
 	<SFML/Graphics.hpp>
 
-1698097775 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
+1698106918 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
-1698102747 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1698108041 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1698097775 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
