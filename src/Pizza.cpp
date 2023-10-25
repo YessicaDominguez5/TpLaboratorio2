@@ -2,7 +2,7 @@
 
 Pizza::Pizza()
 {
-   _texturePizza.loadFromFile("pizza.png");
+    _texturePizza.loadFromFile("pizza.png");
     _spritePizza.setTexture(_texturePizza);
     _spritePizza.setOrigin(_spritePizza.getGlobalBounds().width/2, _spritePizza.getGlobalBounds().height/2);
     _spritePizza.setPosition(350,350);

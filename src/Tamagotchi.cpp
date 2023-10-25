@@ -193,7 +193,6 @@ void Tamagotchi::jugar()
     bool banderaHorario = false;
 
 
-
     while (window.isOpen()) //Game Loop
     {
         sf::Event event;
@@ -318,9 +317,51 @@ void Tamagotchi::jugar()
         }
         s.TipoSuenio(_suenio);
 
+        bool primeraVez = false;
+
         if(horario.getMinuto()%5 == 0 && _salud == 1 && _hambriento == false && _entretenimiento == false && _suenio == false && _higiene == false)
         {
+            if(horario.getMinuto()%5 == 0 && horario.getMinuto()%3 == 0 && primeraVez == false)
+            {
+
+                sf::Font font;
+                font.loadFromFile("Valoon.ttf");
+
+                sf::Text texto;
+
+                sf::Sprite _spritePeligro;
+                sf::Texture _texturePeligro;
+
+
+                _texturePeligro.loadFromFile("peligro.png");
+                _spritePeligro.setTexture(_texturePeligro);
+                _spritePeligro.setPosition(370,150);
+
+                std::string peligro = "CUIDA TU MASCOTA";
+
+
+                texto.setFont(font);
+                texto.setColor(sf::Color::White);
+                texto.setPosition(350,200);
+
+
+                texto.setString(peligro);
+                window.draw(texto);
+
+                window.display();
+
+                primeraVez = true;
+
+                window.clear();
+                window.draw(_spritePeligro);
+                window.display();
+                Sleep(5000);
+            }
+            else
+            {
                 Morir(window);
+
+            }
         }
 
 
@@ -372,7 +413,7 @@ void Tamagotchi::jugar()
         {
             if(_entretenimiento == false)
             {
-                //JugarSnake();
+               // JugarSnake(window);
 
             }
             else
@@ -830,6 +871,55 @@ void Tamagotchi::Morir(sf::RenderWindow& window)
     window.close();
 
 }
+
+/*bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
+{
+
+    bool jugado = false;
+    CabezaSnake cabeza;
+    CuerpoSnake *vectorCuerpo = nullptr, cuerpo;
+    int partesDelCuerpo = 5;
+    Manzana manzana;
+
+
+    manzana.respawn(); //empieza en posicion aleatoria
+
+    vectorCuerpo = new CuerpoSnake[partesDelCuerpo];
+
+    for(int i = 0; i < partesDelCuerpo; i++)
+    {
+        vectorCuerpo[i] = cuerpo.getSprite();
+    }
+
+    if(vectorCuerpo != nullptr)
+     {
+    window.clear();
+    rlutil::locate(100,350);
+    window.draw(cabeza);
+
+    int x = 99;
+
+    for(int i = 0; i < partesDelCuerpo; i++)
+    {
+        window.draw(cuerpo);
+        x--;
+
+    }
+
+
+    }
+    /*while(jugado == false)
+    {
+
+
+
+
+    jugado = true;
+
+
+    }*/
+
+//}
 
 
 

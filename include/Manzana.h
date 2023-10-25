@@ -1,22 +1,22 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <stdlib.h> // para new y delete
+#include <stdlib.h>
 #include "Collisionable.h"
 
 
-class Pizza: public sf::Drawable, public Collisionable
+class Manzana: public sf::Drawable, public Collisionable
 {
 public:
-    Pizza();
-    ~Pizza();
+    Manzana();
+    ~Manzana();
 
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     sf::FloatRect getBounds()const override; //para colisiones
     void respawn();
 
 private:
-    sf::Sprite _spritePizza;
-    sf::Texture _texturePizza;
+    sf::Sprite _spriteManzana;
+    sf::Texture _textureManzana;
 };
 
 

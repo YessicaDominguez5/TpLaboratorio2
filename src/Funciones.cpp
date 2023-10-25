@@ -214,7 +214,7 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
             }
             break;
             case 2:
-                //seePets(); //Opcion "CARGAR PARTIDA"
+                //Opcion "CARGAR PARTIDA"
                 break;
             }
 

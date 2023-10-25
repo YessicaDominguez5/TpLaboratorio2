@@ -206,7 +206,7 @@
 	"Funciones.h"
 	"rlutil.h"
 
-1698106955 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
+1698201477 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -231,6 +231,9 @@
 	"Pizza.h"
 	"Vacuna.h"
 	"Jabon.h"
+	"CabezaSnake.h"
+	"CuerpoSnake.h"
+	"Manzana.h"
 
 1698106941 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\funciones.h
 	<iostream>
@@ -266,10 +269,10 @@
 	"Tamagotchi.h"
 	<SFML/Graphics.hpp>
 
-1698106918 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
+1698192952 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
-1698108041 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1698203332 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1698097775 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchigato.cpp
@@ -281,11 +284,10 @@
 1698097775 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\tamagotchipollito.cpp
 	"TamagotchiPollito.h"
 
-1696454505 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\juegosnake.cpp
+1698112320 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\juegosnake.cpp
 	"JuegoSnake.h"
-	<iostream>
 
-1696454505 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\juegosnake.h
+1698181391 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\juegosnake.h
 
 1696467090 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\pantalla.cpp
 	"Pantalla.h"
@@ -1268,12 +1270,12 @@
 1698097775 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\collisionable.cpp
 	"Collisionable.h"
 
-1698097775 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\pizza.h
+1698192952 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\pizza.h
 	<SFML/Graphics.hpp>
 	<stdlib.h>
 	"Collisionable.h"
 
-1698097775 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\pizza.cpp
+1698185590 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\pizza.cpp
 	"Pizza.h"
 
 1697833889 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\botonrojo.h
@@ -1340,4 +1342,34 @@
 	<SFML/Graphics.hpp>
 	<stdlib.h>
 	"Collisionable.h"
+
+1698112190 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\snake.cpp
+	"Snake.h"
+
+1698185227 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\snake.h
+	<SFML/Graphics.hpp>
+
+1698186140 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\manzana.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698189725 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\cabezasnake.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698192952 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\cuerposnake.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698201841 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\cabezasnake.cpp
+	"CabezaSnake.h"
+
+1698189731 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\cuerposnake.cpp
+	"CuerpoSnake.h"
+
+1698184744 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\manzana.cpp
+	"Manzana.h"
 

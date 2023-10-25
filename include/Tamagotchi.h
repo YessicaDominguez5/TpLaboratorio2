@@ -23,6 +23,9 @@
 #include "Pizza.h"
 #include "Vacuna.h"
 #include "Jabon.h"
+#include "CabezaSnake.h"
+#include "CuerpoSnake.h"
+#include "Manzana.h"
 
 
 
@@ -60,13 +63,16 @@ public:
 
     virtual void jugar();
     void update(int valorTop);
+
+
     bool Limpiar(sf::RenderWindow& window);
     bool Alimentar(sf::RenderWindow& window);
     bool Dormir(sf::RenderWindow& window);
-
     int Curar(sf::RenderWindow& window);
     void Negarse(sf::RenderWindow& window, std::string negacion);
     void Morir(sf::RenderWindow& window);
+    bool JugarSnake(sf::RenderWindow& window);
+
 
 
 
