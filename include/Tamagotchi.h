@@ -76,6 +76,7 @@ public:
 
 
 
+
 protected:
 
     int _tipoDeMascota; //Perro, Gato o pollito

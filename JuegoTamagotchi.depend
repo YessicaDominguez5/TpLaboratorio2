@@ -61,7 +61,7 @@
 	"Funciones.h"
 	"rlutil.h"
 
-1697899846 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
+1698270508 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -69,6 +69,7 @@
 	<string>
 	<ctime>
 	<stdlib.h>
+	<windows.h>
 	"rlutil.h"
 	"Salud.h"
 	"horario.h"
@@ -83,8 +84,13 @@
 	"BotonGris.h"
 	"Collisionable.h"
 	"Pizza.h"
+	"Vacuna.h"
+	"Jabon.h"
+	"CabezaSnake.h"
+	"CuerpoSnake.h"
+	"Manzana.h"
 
-1697910711 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1698290426 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1695254259 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\funciones.cpp
@@ -113,7 +119,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1697833889 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\funciones.h
+1698268330 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\funciones.h
 	<iostream>
 	<stdio.h>
 	"rlutil.h"
@@ -135,7 +141,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1697833889 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\funciones.cpp
+1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\funciones.cpp
 	"Funciones.h"
 
 1697901611 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchipollito.cpp
@@ -1301,7 +1307,7 @@
 	<SFML/Graphics.hpp>
 	"Collisionable.h"
 
-1697833889 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\pizza.h
+1698268330 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\pizza.h
 	<SFML/Graphics.hpp>
 	<stdlib.h>
 	"Collisionable.h"
@@ -1324,7 +1330,7 @@
 1697833889 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\collisionable.cpp
 	"Collisionable.h"
 
-1697905022 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\pizza.cpp
+1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\pizza.cpp
 	"Pizza.h"
 
 1698097775 c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\include\vacuna.h
@@ -1372,4 +1378,44 @@
 
 1698184744 source:c:\users\yeppi\documents\juegolaboratorio2\tplaboratorio2\src\manzana.cpp
 	"Manzana.h"
+
+1698268330 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\vacuna.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698268330 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\jabon.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698289965 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cabezasnake.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698268330 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cuerposnake.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698268330 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\manzana.h
+	<SFML/Graphics.hpp>
+	<stdlib.h>
+	"Collisionable.h"
+
+1698289966 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cabezasnake.cpp
+	"CabezaSnake.h"
+
+1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cuerposnake.cpp
+	"CuerpoSnake.h"
+
+1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\jabon.cpp
+	"Jabon.h"
+
+1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\manzana.cpp
+	"Manzana.h"
+
+1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\vacuna.cpp
+	"Vacuna.h"
 

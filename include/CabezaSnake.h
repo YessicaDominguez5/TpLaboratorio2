@@ -11,13 +11,19 @@ public:
 
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     sf::FloatRect getBounds()const override; //para colisiones
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
+    bool choqueConBordes();
 
 
 private:
 
     sf::Sprite _spriteCabezaSnake;
     sf::Texture _textureCabezaSnake;
-    sf::Vector2f _velocityCabeza;
+    float _velocityCabeza;
+
 };
 
 

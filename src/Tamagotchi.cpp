@@ -191,7 +191,7 @@ void Tamagotchi::jugar()
     bool baniado = false;
     bool descansado = false;
     bool banderaHorario = false;
-
+    bool entretenido  = false;
 
     while (window.isOpen()) //Game Loop
     {
@@ -210,6 +210,9 @@ void Tamagotchi::jugar()
 
         if(horario.getMinuto() % 3 == 0 && curado == false && banderaHorario == false) //cambia el estado //que entre una sola vez por minuto %3
         {
+            if(_salud == 1){
+                Morir(window);
+            }
             _salud = 1; //grave
             dibujarSalud(window);
             banderaHorario = true;
@@ -287,9 +290,20 @@ void Tamagotchi::jugar()
 
         Entretenimiento e;
 
-        if(horario.getMinuto() % 3 == 0)
+        if(horario.getMinuto() % 3 == 0 && entretenido == false)
         {
             _entretenimiento = false;
+
+        }
+        else if(horario.getMinuto() % 3 == 0 && entretenido == true)
+        {
+            _entretenimiento = true;
+
+
+        }
+        else if(!(horario.getMinuto() % 3 == 0)&& entretenido == true)
+        {
+            _entretenimiento = true;
 
         }
 
@@ -316,53 +330,6 @@ void Tamagotchi::jugar()
 
         }
         s.TipoSuenio(_suenio);
-
-        bool primeraVez = false;
-
-        if(horario.getMinuto()%5 == 0 && _salud == 1 && _hambriento == false && _entretenimiento == false && _suenio == false && _higiene == false)
-        {
-            if(horario.getMinuto()%5 == 0 && horario.getMinuto()%3 == 0 && primeraVez == false)
-            {
-
-                sf::Font font;
-                font.loadFromFile("Valoon.ttf");
-
-                sf::Text texto;
-
-                sf::Sprite _spritePeligro;
-                sf::Texture _texturePeligro;
-
-
-                _texturePeligro.loadFromFile("peligro.png");
-                _spritePeligro.setTexture(_texturePeligro);
-                _spritePeligro.setPosition(370,150);
-
-                std::string peligro = "CUIDA TU MASCOTA";
-
-
-                texto.setFont(font);
-                texto.setColor(sf::Color::White);
-                texto.setPosition(350,200);
-
-
-                texto.setString(peligro);
-                window.draw(texto);
-
-                window.display();
-
-                primeraVez = true;
-
-                window.clear();
-                window.draw(_spritePeligro);
-                window.display();
-                Sleep(5000);
-            }
-            else
-            {
-                Morir(window);
-
-            }
-        }
 
 
         dibujarSalud(window); //dibuja los corazones
@@ -413,14 +380,24 @@ void Tamagotchi::jugar()
         {
             if(_entretenimiento == false)
             {
-               // JugarSnake(window);
+                _entretenimiento = JugarSnake(window);
+                entretenido = true;
+                if(_salud < 5)
+                {
+                    _salud++;
+
+                }
+                _sprite.setPosition(300,200);
+
 
             }
             else
             {
-                std::string text = "NO ESTOY ABURRIDO";
+               // std::string text = "NO ESTOY ABURRIDO";
 
-                Negarse(window,text);
+                //Negarse(window,text);
+
+               JugarSnake(window);
             }
         }
         if(isCollision(bv))
@@ -872,54 +849,93 @@ void Tamagotchi::Morir(sf::RenderWindow& window)
 
 }
 
-/*bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
+bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 {
-
-    bool jugado = false;
     CabezaSnake cabeza;
-    CuerpoSnake *vectorCuerpo = nullptr, cuerpo;
-    int partesDelCuerpo = 5;
-    Manzana manzana;
+    int manzanasRecolectadas = 0;
+    Manzana m;
+    bool gameOver = false, left = false, right = true, down = false, up = false;
 
 
-    manzana.respawn(); //empieza en posicion aleatoria
+    sf::Font font;
+    font.loadFromFile("Valoon.ttf");
 
-    vectorCuerpo = new CuerpoSnake[partesDelCuerpo];
+    sf::Text texto;
 
-    for(int i = 0; i < partesDelCuerpo; i++)
+    texto.setFont(font);
+    texto.setColor(sf::Color::White);
+    texto.setPosition(350,10);
+
+    m.respawn();
+
+
+    while(gameOver == false)
     {
-        vectorCuerpo[i] = cuerpo.getSprite();
+        window.clear();
+
+
+        if(cabeza.isCollision(m))
+        {
+            manzanasRecolectadas++;
+            m.respawn();
+
+        }
+       gameOver = cabeza.choqueConBordes();
+        texto.setString(std::to_string(manzanasRecolectadas));
+        window.draw(m);
+        window.draw(texto);
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+            left = true;
+            right = false;
+            down = false;
+            up = false;
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+            left = false;
+            right = true;
+            down = false;
+            up = false;
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+            left = false;
+            right = false;
+            down = true;
+            up = false;
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+            left = false;
+            right = false;
+            down = false;
+            up = true;
+        }
+
+        if(left) cabeza.moveLeft();
+        else if(right) cabeza.moveRight();
+        else if(down) cabeza.moveDown();
+        else if(up) cabeza.moveUp();
+
+        window.draw(cabeza);
+        window.display();
+        //Sleep(100);
     }
 
-    if(vectorCuerpo != nullptr)
-     {
-    window.clear();
-    rlutil::locate(100,350);
-    window.draw(cabeza);
-
-    int x = 99;
-
-    for(int i = 0; i < partesDelCuerpo; i++)
+    if(manzanasRecolectadas >= 5)
     {
-        window.draw(cuerpo);
-        x--;
+        _sprite.setPosition(300,200);
+    return true;
 
     }
-
-
-    }
-    /*while(jugado == false)
+    else
     {
+        _sprite.setPosition(300,200);
+        return false;
+    }
+
+}
 
 
 
-
-    jugado = true;
-
-
-    }*/
-
-//}
 
 
 
