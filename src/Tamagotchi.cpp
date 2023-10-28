@@ -885,49 +885,63 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
         window.draw(m);
         window.draw(texto);
 
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && right == false){
             left = true;
             right = false;
             down = false;
             up = false;
+
+
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && left == false){
             left = false;
             right = true;
             down = false;
             up = false;
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && up == false){
             left = false;
             right = false;
             down = true;
             up = false;
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && down == false){
             left = false;
             right = false;
             down = false;
             up = true;
         }
 
-        if(left) cabeza.moveLeft();
-        else if(right) cabeza.moveRight();
-        else if(down) cabeza.moveDown();
-        else if(up) cabeza.moveUp();
+        if(left)
+        {
+            cabeza.moveLeft();
+        }
+        else if(right)
+        {
+            cabeza.moveRight();
+        }
+        else if(down)
+        {
+            cabeza.moveDown();
+        }
+        else if(up)
+        {
+            cabeza.moveUp();
+        }
 
         window.draw(cabeza);
         window.display();
         //Sleep(100);
     }
 
-    if(manzanasRecolectadas >= 5)
+    if(manzanasRecolectadas >= 5) //si recolecto por lo menos 5 manzanas el tamagotchi va a estar entretenido
     {
         _sprite.setPosition(300,200);
     return true;
 
     }
     else
-    {
+    { // si no llego a las 5 manzanas, va a haber jugado pero va a seguir aburrido
         _sprite.setPosition(300,200);
         return false;
     }

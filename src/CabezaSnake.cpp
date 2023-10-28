@@ -28,20 +28,24 @@ sf::FloatRect CabezaSnake::getBounds()const
 void CabezaSnake::moveLeft()
 {
     _spriteCabezaSnake.move(-_velocityCabeza,0);
+    _spriteCabezaSnake.setScale(-1,1);
 }
 void CabezaSnake::moveRight()
 {
     _spriteCabezaSnake.move(_velocityCabeza,0);
+    _spriteCabezaSnake.setScale(1,1);
 
 }
 void CabezaSnake::moveUp()
 {
     _spriteCabezaSnake.move(0,-_velocityCabeza);
+    _spriteCabezaSnake.setScale(1,1);
 
 }
 void CabezaSnake::moveDown()
 {
     _spriteCabezaSnake.move(0,_velocityCabeza);
+    _spriteCabezaSnake.setScale(-1,-1);
 
 }
 
