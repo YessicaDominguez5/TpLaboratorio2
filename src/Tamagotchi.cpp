@@ -210,7 +210,8 @@ void Tamagotchi::jugar()
 
         if(horario.getMinuto() % 3 == 0 && curado == false && banderaHorario == false) //cambia el estado //que entre una sola vez por minuto %3
         {
-            if(_salud == 1){
+            if(_salud == 1)
+            {
                 Morir(window);
             }
             _salud = 1; //grave
@@ -393,11 +394,11 @@ void Tamagotchi::jugar()
             }
             else
             {
-               // std::string text = "NO ESTOY ABURRIDO";
+                // std::string text = "NO ESTOY ABURRIDO";
 
                 //Negarse(window,text);
 
-               JugarSnake(window);
+                JugarSnake(window);
             }
         }
         if(isCollision(bv))
@@ -588,11 +589,11 @@ void Tamagotchi::dibujarAcciones(sf::RenderWindow& window)
     textLimpiar.setFont(font);
     textCurar.setFont(font);
 
-    textAlimentar.setColor(sf::Color::Yellow);
-    textJugarSnake.setColor(sf::Color::Magenta);
-    textDormir.setColor(sf::Color::Red);
-    textLimpiar.setColor(sf::Color::Blue);
-    textCurar.setColor(sf::Color::Green);
+    textAlimentar.setFillColor(sf::Color::Yellow);
+    textJugarSnake.setFillColor(sf::Color::Magenta);
+    textDormir.setFillColor(sf::Color::Red);
+    textLimpiar.setFillColor(sf::Color::Blue);
+    textCurar.setFillColor(sf::Color::Green);
 
     textAlimentar.setPosition(1,550);
     textJugarSnake.setPosition(200,550);
@@ -628,7 +629,7 @@ void Tamagotchi::Negarse(sf::RenderWindow& window, std::string negacion)
     sf::Text texto;
 
     texto.setFont(font);
-    texto.setColor(sf::Color::White);
+    texto.setFillColor(sf::Color::White);
     texto.setPosition(350,200);
     texto.setString(negacion);
     window.draw(texto);
@@ -653,7 +654,7 @@ bool Tamagotchi::Alimentar(sf::RenderWindow& window)
     sf::Text texto;
 
     texto.setFont(font);
-    texto.setColor(sf::Color::White);
+    texto.setFillColor(sf::Color::White);
     texto.setPosition(350,10);
 
     pizza.respawn();
@@ -689,6 +690,8 @@ bool Tamagotchi::Alimentar(sf::RenderWindow& window)
     }
 
     pizza.~Pizza();
+
+    return false;
 }
 
 int Tamagotchi::Curar(sf::RenderWindow& window)
@@ -706,7 +709,7 @@ int Tamagotchi::Curar(sf::RenderWindow& window)
     sf::Text texto;
 
     texto.setFont(font);
-    texto.setColor(sf::Color::White);
+    texto.setFillColor(sf::Color::White);
     texto.setPosition(350,10);
 
     vacuna.respawn();
@@ -743,6 +746,8 @@ int Tamagotchi::Curar(sf::RenderWindow& window)
 
     vacuna.~Vacuna();
 
+    return 1;
+
 }
 
 bool Tamagotchi::Limpiar(sf::RenderWindow& window)
@@ -760,7 +765,7 @@ bool Tamagotchi::Limpiar(sf::RenderWindow& window)
     sf::Text texto;
 
     texto.setFont(font);
-    texto.setColor(sf::Color::White);
+    texto.setFillColor(sf::Color::White);
     texto.setPosition(350,10);
 
     jabon.respawn();
@@ -796,6 +801,8 @@ bool Tamagotchi::Limpiar(sf::RenderWindow& window)
     }
 
     jabon.~Jabon();
+
+    return false;
 
 }
 
@@ -852,8 +859,13 @@ void Tamagotchi::Morir(sf::RenderWindow& window)
 bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 {
     CabezaSnake cabeza;
-    int manzanasRecolectadas = 0;
+    int manzanasRecolectadas = 0, tamVecCuerpo = 5;
     Manzana m;
+    CuerpoSnake *cuerpo = nullptr;
+    CuerpoSnake c;
+    cuerpo = new CuerpoSnake[tamVecCuerpo];
+
+
     bool gameOver = false, left = false, right = true, down = false, up = false;
 
 
@@ -863,49 +875,75 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
     sf::Text texto;
 
     texto.setFont(font);
-    texto.setColor(sf::Color::White);
+    texto.setFillColor(sf::Color::White);
     texto.setPosition(350,10);
 
+
     m.respawn();
+
+    for(int i = 0; i < 5; i++) //guarda el objeto c en cada una de las posiciones del vector
+    {
+        cuerpo[i] = c;
+
+    }
+
+    int x = 80, y = 350;
+
+    for(int j = 0; j < tamVecCuerpo; j++)
+    {
+
+        cuerpo[j].setearPosicionInicial(x, y);
+
+        x-=25;
+
+    }
+
 
 
     while(gameOver == false)
     {
         window.clear();
 
-
         if(cabeza.isCollision(m))
         {
             manzanasRecolectadas++;
+            if(cuerpo != nullptr)
+            {
+                tamVecCuerpo++;
+                cuerpo = new CuerpoSnake[tamVecCuerpo];
+                llenarVecCuerpo(cuerpo, tamVecCuerpo, c);
+            }
             m.respawn();
 
         }
-       gameOver = cabeza.choqueConBordes();
+        gameOver = cabeza.choqueConBordes();
         texto.setString(std::to_string(manzanasRecolectadas));
         window.draw(m);
         window.draw(texto);
 
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && right == false){
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && right == false) //despues de ir a la izquierda tiene que ir si o si para arriba o para abajo, no a la derecha
+        {
             left = true;
             right = false;
             down = false;
             up = false;
-
-
         }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && left == false){
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && left == false)
+        {
             left = false;
             right = true;
             down = false;
             up = false;
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && up == false){
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && up == false)
+        {
             left = false;
             right = false;
             down = true;
             up = false;
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && down == false){
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && down == false)
+        {
             left = false;
             right = false;
             down = false;
@@ -915,37 +953,106 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
         if(left)
         {
             cabeza.moveLeft();
+
+                int px = cabeza.getPositionX();
+                int py = cabeza.getPositionY();
+
+
+            for(int j = 0; j < tamVecCuerpo; j++)
+            {
+
+
+                px += 25;
+                cuerpo[j].setearPosicion(px,py);
+
+            }
         }
         else if(right)
         {
             cabeza.moveRight();
+
+                int px = cabeza.getPositionX();
+                int py = cabeza.getPositionY();
+
+            for(int j = 0; j < tamVecCuerpo; j++)
+            {
+
+                px -= 25;
+                cuerpo[j].setearPosicion(px,py);
+
+            }
         }
         else if(down)
         {
             cabeza.moveDown();
+
+                int px = cabeza.getPositionX();
+                int py = cabeza.getPositionY();
+
+            for(int j = 0; j < tamVecCuerpo; j++)
+            {
+
+                py -= 25;
+                cuerpo[j].setearPosicion(px,py);
+            }
+
         }
         else if(up)
         {
             cabeza.moveUp();
+
+             int px = cabeza.getPositionX();
+                int py = cabeza.getPositionY();
+
+            for(int j = 0; j < tamVecCuerpo; j++)
+            {
+
+                py += 25;
+                cuerpo[j].setearPosicion(px,py);
+            }
+
+
+
         }
 
         window.draw(cabeza);
+
+
+
+        for(int i = 0; i < tamVecCuerpo; i ++)
+        {
+            window.draw(cuerpo[i]);
+
+        }
         window.display();
-        //Sleep(100);
+
+
+
+
     }
 
     if(manzanasRecolectadas >= 5) //si recolecto por lo menos 5 manzanas el tamagotchi va a estar entretenido
     {
         _sprite.setPosition(300,200);
-    return true;
+        return true;
 
     }
     else
-    { // si no llego a las 5 manzanas, va a haber jugado pero va a seguir aburrido
+    {
+        // si no llego a las 5 manzanas, va a haber jugado pero va a seguir aburrido
         _sprite.setPosition(300,200);
         return false;
     }
 
+    delete cuerpo;
+}
+
+void Tamagotchi::llenarVecCuerpo(CuerpoSnake *vecCuerpo, int tam, CuerpoSnake agregarParte)
+{
+    for(int i = 0; i < tam; i++)
+    {
+        vecCuerpo[i] = agregarParte;
+    }
 }
 
 

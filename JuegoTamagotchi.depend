@@ -61,7 +61,7 @@
 	"Funciones.h"
 	"rlutil.h"
 
-1698270508 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
+1698516640 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -90,7 +90,7 @@
 	"CuerpoSnake.h"
 	"Manzana.h"
 
-1698511081 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1698622576 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1695254259 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\funciones.cpp
@@ -1389,12 +1389,12 @@
 	<stdlib.h>
 	"Collisionable.h"
 
-1698289965 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cabezasnake.h
+1698603261 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cabezasnake.h
 	<SFML/Graphics.hpp>
 	<stdlib.h>
 	"Collisionable.h"
 
-1698268330 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cuerposnake.h
+1698621039 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cuerposnake.h
 	<SFML/Graphics.hpp>
 	<stdlib.h>
 	"Collisionable.h"
@@ -1404,10 +1404,10 @@
 	<stdlib.h>
 	"Collisionable.h"
 
-1698454417 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cabezasnake.cpp
+1698603261 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cabezasnake.cpp
 	"CabezaSnake.h"
 
-1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cuerposnake.cpp
+1698621038 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cuerposnake.cpp
 	"CuerpoSnake.h"
 
 1698268330 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\jabon.cpp

@@ -16,6 +16,10 @@ public:
     void moveUp();
     void moveDown();
     bool choqueConBordes();
+    int getPositionX();
+    int getPositionY();
+
+
 
 
 private:

@@ -73,3 +73,13 @@ bool CabezaSnake::choqueConBordes()
 
     }
 }
+
+int CabezaSnake::getPositionX()
+{
+    return _spriteCabezaSnake.getPosition().x;
+}
+
+int CabezaSnake::getPositionY()
+{
+    return _spriteCabezaSnake.getPosition().y;
+}

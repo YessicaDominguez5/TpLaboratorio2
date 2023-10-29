@@ -73,6 +73,8 @@ public:
     void Morir(sf::RenderWindow& window);
     bool JugarSnake(sf::RenderWindow& window);
 
+    void llenarVecCuerpo(CuerpoSnake *vecCuerpo, int tam, CuerpoSnake agregarParte);
+
 
 
 

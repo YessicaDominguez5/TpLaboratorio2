@@ -13,12 +13,21 @@ public:
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     sf::FloatRect getBounds()const override; //para colisiones
     sf::Sprite getSprite();
+    void setearPosicionInicial(int x, int y);
+    void setearPosicion(int x, int y);
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
+    int getPositionX();
+    int getPositionY();
+
 
 private:
 
     sf::Sprite _spriteCuerpoSnake;
     sf::Texture _textureCuerpoSnake;
-    sf::Vector2f _velocityCuerpo;
+    float _velocityCuerpo;
 
 };
 
