@@ -18,7 +18,8 @@ public:
     bool choqueConBordes();
     int getPositionX();
     int getPositionY();
-    int setPosition(int x, int y);
+
+    bool jugar(sf::RenderWindow& window);
 
 
 
@@ -28,7 +29,6 @@ private:
     sf::Sprite _spriteCabezaSnake;
     sf::Texture _textureCabezaSnake;
     float _velocityCabeza;
-    int _DireccionCabeza[2]; //x,y
 
 };
 

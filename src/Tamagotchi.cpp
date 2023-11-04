@@ -1,4 +1,5 @@
 #include "Tamagotchi.h"
+#include <time.h>
 
 Tamagotchi::Tamagotchi()
 {
@@ -183,6 +184,8 @@ void Tamagotchi::jugar()
 {
 
     rlutil::cls();
+
+
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "TAMAGOTCHI");
     window.setFramerateLimit(60); //Limita los fps por segundo(velocidad de movimiento del sprite)
@@ -858,220 +861,15 @@ void Tamagotchi::Morir(sf::RenderWindow& window)
 
 bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 {
-    CabezaSnake cabeza;
-    int manzanasRecolectadas = 0, tamVecCuerpo = 5;
-    Manzana m;
-    CuerpoSnake *cuerpo = nullptr;
-    CuerpoSnake c;
-    cuerpo = new CuerpoSnake[tamVecCuerpo];
-
-
-    bool gameOver = false, left = false, right = true, down = false, up = false;
-
-
-    sf::Font font;
-    font.loadFromFile("Valoon.ttf");
-
-    sf::Text texto;
-
-    texto.setFont(font);
-    texto.setFillColor(sf::Color::White);
-    texto.setPosition(350,10);
-
-
-    m.respawn();
-
-    for(int i = 0; i < 5; i++) //guarda el objeto c en cada una de las posiciones del vector
+    sf::RenderWindow snakeWindow(sf::VideoMode(480, 320), "SNAKE");
+    bool jugado = false;
+    CabezaSnake c;
+    while(!jugado)
     {
-        cuerpo[i] = c;
+    window.clear();
+    jugado = c.jugar(snakeWindow);
 
     }
-
-    int x = 80, y = 350;
-
-    for(int j = 0; j < tamVecCuerpo; j++)
-    {
-
-        cuerpo[j].setearPosicionInicial(x, y);
-
-        x-=25;
-
-    }
-
-
-
-    while(!gameOver)
-    {
-        window.clear();
-
-        if(cabeza.isCollision(m))
-        {
-            manzanasRecolectadas++;
-            if(cuerpo != nullptr)
-            {
-                tamVecCuerpo++;
-                cuerpo = new CuerpoSnake[tamVecCuerpo];
-                llenarVecCuerpo(cuerpo, tamVecCuerpo, c);
-            }
-            m.respawn();
-
-        }
-        gameOver = cabeza.choqueConBordes();
-        texto.setString(std::to_string(manzanasRecolectadas));
-        window.draw(m);
-        window.draw(texto);
-
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && right == false) //despues de ir a la izquierda tiene que ir si o si para arriba o para abajo, no a la derecha
-        {
-            left = true;
-            right = false;
-            down = false;
-            up = false;
-        }
-        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && left == false)
-        {
-            left = false;
-            right = true;
-            down = false;
-            up = false;
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && up == false)
-        {
-            left = false;
-            right = false;
-            down = true;
-            up = false;
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && down == false)
-        {
-            left = false;
-            right = false;
-            down = false;
-            up = true;
-        }
-
-
-        int prevCuerpoPosX = cuerpo[0].getPositionX();//primera posicion del cuerpo en x
-        int prevCuerpoPosY = cuerpo[0].getPositionY();
-        int prevCuerpoPosXaux,prevCuerpoPosYaux;
-
-        int posCX = cabeza.getPositionX();
-        int posCY = cabeza.getPositionY();
-        int posCuEnCeroX = cuerpo[0].getPositionX();
-        int posCuEnCeroY = cuerpo[0].getPositionY();
-
-
-
-        posCuEnCeroX = posCX;
-        posCuEnCeroY = posCY;
-
-
-        for(int i = 1; i < tamVecCuerpo;i++)
-        {
-            prevCuerpoPosXaux = cuerpo[i].getPositionX();
-            prevCuerpoPosYaux = cuerpo[i].getPositionY();
-
-            cuerpo[i].setearPosicion(prevCuerpoPosX,prevCuerpoPosY);
-
-            prevCuerpoPosX = prevCuerpoPosXaux;
-            prevCuerpoPosY = prevCuerpoPosYaux;
-        }
-
-        if(left)
-        {
-            int x = cabeza.getPositionX();
-            int y = cabeza.getPositionY();
-
-            x--;
-
-
-            cabeza.setPosition(x,y);
-
-
-        }
-        else if(right)
-        {
-            int x = cabeza.getPositionX();
-            int y = cabeza.getPositionY();
-
-            x++;
-
-            cabeza.setPosition(x,y);
-
-
-
-        }
-        else if(down)
-        {
-            int x = cabeza.getPositionX();
-            int y = cabeza.getPositionY();
-
-            y++;
-
-            cabeza.setPosition(x,y);
-
-
-        }
-        else if(up)
-        {
-            int x = cabeza.getPositionX();
-            int y = cabeza.getPositionY();
-
-            y--;
-
-            cabeza.setPosition(x,y);
-
-
-
-        }
-
-        int cGpX = cabeza.getPositionX();
-        int cGpY = cabeza.getPositionY();
-
-for(int i = 0; i < 800;i++)
-{
-    for(int j= 0; j < 600; j++)
-    {
-        if(j == cGpX  && i == cGpY)
-        {
-        window.draw(cabeza);
-
-        }
-        else
-        {
-        for(int i = 0; i < tamVecCuerpo; i ++)
-        {
-
-            window.draw(cuerpo[i]);
-
-        }
-
-        }
-    }
-}
-
-
-        window.display();
-
-
-
-
-    }
-
-    if(manzanasRecolectadas >= 5) //si recolecto por lo menos 5 manzanas el tamagotchi va a estar entretenido
-    {
-        _sprite.setPosition(300,200);
-        return true;
-
-    }
-    else
-    {
-        // si no llego a las 5 manzanas, va a haber jugado pero va a seguir aburrido
-        _sprite.setPosition(300,200);
-        return false;
-    }
-
-    delete cuerpo;
 }
 
 void Tamagotchi::llenarVecCuerpo(CuerpoSnake *vecCuerpo, int tam, CuerpoSnake agregarParte)
