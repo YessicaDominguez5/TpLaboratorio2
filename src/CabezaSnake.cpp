@@ -7,6 +7,7 @@ CabezaSnake::CabezaSnake()
     _spriteCabezaSnake.setOrigin(_spriteCabezaSnake.getGlobalBounds().width/2, _spriteCabezaSnake.getGlobalBounds().height/2);
     _velocityCabeza = 4;
     _spriteCabezaSnake.setPosition(100,350);
+
 }
 
 CabezaSnake::~CabezaSnake()
@@ -82,4 +83,9 @@ int CabezaSnake::getPositionX()
 int CabezaSnake::getPositionY()
 {
     return _spriteCabezaSnake.getPosition().y;
+}
+
+int CabezaSnake::setPosition(int x, int y)
+{
+    _spriteCabezaSnake.setPosition(x,y);
 }

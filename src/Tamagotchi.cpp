@@ -900,7 +900,7 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 
 
 
-    while(gameOver == false)
+    while(!gameOver)
     {
         window.clear();
 
@@ -950,80 +950,107 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
             up = true;
         }
 
+
+        int prevCuerpoPosX = cuerpo[0].getPositionX();//primera posicion del cuerpo en x
+        int prevCuerpoPosY = cuerpo[0].getPositionY();
+        int prevCuerpoPosXaux,prevCuerpoPosYaux;
+
+        int posCX = cabeza.getPositionX();
+        int posCY = cabeza.getPositionY();
+        int posCuEnCeroX = cuerpo[0].getPositionX();
+        int posCuEnCeroY = cuerpo[0].getPositionY();
+
+
+
+        posCuEnCeroX = posCX;
+        posCuEnCeroY = posCY;
+
+
+        for(int i = 1; i < tamVecCuerpo;i++)
+        {
+            prevCuerpoPosXaux = cuerpo[i].getPositionX();
+            prevCuerpoPosYaux = cuerpo[i].getPositionY();
+
+            cuerpo[i].setearPosicion(prevCuerpoPosX,prevCuerpoPosY);
+
+            prevCuerpoPosX = prevCuerpoPosXaux;
+            prevCuerpoPosY = prevCuerpoPosYaux;
+        }
+
         if(left)
         {
-            cabeza.moveLeft();
+            int x = cabeza.getPositionX();
+            int y = cabeza.getPositionY();
 
-                int px = cabeza.getPositionX();
-                int py = cabeza.getPositionY();
-
-
-            for(int j = 0; j < tamVecCuerpo; j++)
-            {
+            x--;
 
 
-                px += 25;
-                cuerpo[j].setearPosicion(px,py);
+            cabeza.setPosition(x,y);
 
-            }
+
         }
         else if(right)
         {
-            cabeza.moveRight();
+            int x = cabeza.getPositionX();
+            int y = cabeza.getPositionY();
 
-                int px = cabeza.getPositionX();
-                int py = cabeza.getPositionY();
+            x++;
 
-            for(int j = 0; j < tamVecCuerpo; j++)
-            {
+            cabeza.setPosition(x,y);
 
-                px -= 25;
-                cuerpo[j].setearPosicion(px,py);
 
-            }
+
         }
         else if(down)
         {
-            cabeza.moveDown();
+            int x = cabeza.getPositionX();
+            int y = cabeza.getPositionY();
 
-                int px = cabeza.getPositionX();
-                int py = cabeza.getPositionY();
+            y++;
 
-            for(int j = 0; j < tamVecCuerpo; j++)
-            {
+            cabeza.setPosition(x,y);
 
-                py -= 25;
-                cuerpo[j].setearPosicion(px,py);
-            }
 
         }
         else if(up)
         {
-            cabeza.moveUp();
+            int x = cabeza.getPositionX();
+            int y = cabeza.getPositionY();
 
-             int px = cabeza.getPositionX();
-                int py = cabeza.getPositionY();
+            y--;
 
-            for(int j = 0; j < tamVecCuerpo; j++)
-            {
-
-                py += 25;
-                cuerpo[j].setearPosicion(px,py);
-            }
+            cabeza.setPosition(x,y);
 
 
 
         }
 
+        int cGpX = cabeza.getPositionX();
+        int cGpY = cabeza.getPositionY();
+
+for(int i = 0; i < 800;i++)
+{
+    for(int j= 0; j < 600; j++)
+    {
+        if(j == cGpX  && i == cGpY)
+        {
         window.draw(cabeza);
 
-
-
+        }
+        else
+        {
         for(int i = 0; i < tamVecCuerpo; i ++)
         {
+
             window.draw(cuerpo[i]);
 
         }
+
+        }
+    }
+}
+
+
         window.display();
 
 
