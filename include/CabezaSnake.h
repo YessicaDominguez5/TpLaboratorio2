@@ -19,8 +19,6 @@ public:
     int getPositionX();
     int getPositionY();
 
-    bool jugar(sf::RenderWindow& window);
-
 
 
 

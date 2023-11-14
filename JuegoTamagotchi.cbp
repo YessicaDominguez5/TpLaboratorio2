@@ -68,10 +68,6 @@
 		<Unit filename="include/horario.h" />
 		<Unit filename="include/rlutil.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="pepe/images/green.png" />
-		<Unit filename="pepe/images/red.png" />
-		<Unit filename="pepe/images/white.png" />
-		<Unit filename="pepe/mainSnake.cpp" />
 		<Unit filename="src/BotonAzul.cpp" />
 		<Unit filename="src/BotonGris.cpp" />
 		<Unit filename="src/BotonNegro.cpp" />
