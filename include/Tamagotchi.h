@@ -26,6 +26,7 @@
 #include "CabezaSnake.h"
 #include "CuerpoSnake.h"
 #include "Manzana.h"
+#include "Snake.h"
 
 
 
