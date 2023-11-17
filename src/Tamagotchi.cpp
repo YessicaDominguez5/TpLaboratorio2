@@ -974,6 +974,27 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 
 
 
+     if(spriteCabeza.getGlobalBounds().left < 0)
+    {
+        gameOver = true;
+    }
+
+    if(spriteCabeza.getGlobalBounds().top < 0)
+    {
+        gameOver = true;
+    }
+
+    if(spriteCabeza.getGlobalBounds().left + spriteCabeza.getGlobalBounds().width > 800)
+    {
+        gameOver = true;
+    }
+
+    if(spriteCabeza.getGlobalBounds().top + spriteCabeza.getGlobalBounds().height > 600)
+    {
+        gameOver = true;
+
+    }
+
      for (int i=0;i<10;i++) //dibuja
         {
             if(i == 0)
