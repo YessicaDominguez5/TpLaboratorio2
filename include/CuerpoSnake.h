@@ -21,6 +21,7 @@ public:
     void moveDown();
     int getPositionX();
     int getPositionY();
+    bool choqueConBordes();
 
 
 private:

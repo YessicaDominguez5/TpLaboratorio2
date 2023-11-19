@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include <SFML/Graphics.hpp>
 #include <stdlib.h>
 #include "Collisionable.h"
@@ -29,5 +29,5 @@ private:
     float _velocityCabeza;
 
 };
-
+*/
 

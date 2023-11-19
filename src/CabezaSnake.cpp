@@ -1,4 +1,4 @@
-#include "CabezaSnake.h"
+/*#include "CabezaSnake.h"
 
 CabezaSnake::CabezaSnake()
 {
@@ -83,3 +83,4 @@ int CabezaSnake::getPositionY()
 {
     return _spriteCabezaSnake.getPosition().y;
 }
+*/
