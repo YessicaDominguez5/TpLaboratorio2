@@ -382,23 +382,29 @@ void Tamagotchi::jugar()
             if(_entretenimiento == false)
             {
                 _entretenimiento = JugarSnake(window);
-                entretenido = true;
+               // entretenido = true;
+               if(_entretenimiento == true)
+               {
                 if(_salud < 5)
                 {
                     _salud++;
 
                 }
+
+               }
+
                 _sprite.setPosition(300,200);
-
-
             }
+
+
+
             else
             {
-                // std::string text = "NO ESTOY ABURRIDO";
+                std::string text = "NO ESTOY ABURRIDO";
 
-                //Negarse(window,text);
+                Negarse(window,text);
 
-                JugarSnake(window);
+
             }
         }
         if(isCollision(bv))
@@ -964,11 +970,15 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
        if(cuerpo[0].isCollision(m))
         {
             manzanasRecolectadas++;
-            if(cuerpo != nullptr)
+
+            if(manzanasRecolectadas == 20)
             {
+                return true;
+            }
+
                 tamVecCuerpo++;
 
-            }
+
             m.respawn();
 
         }
@@ -994,20 +1004,11 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 
     }
 
-    if(manzanasRecolectadas >= 5) //si recolecto por lo menos 5 manzanas el tamagotchi va a estar entretenido
-    {
-        _sprite.setPosition(300,200);
-        return true;
 
-    }
-    else
-    {
-        // si no llego a las 5 manzanas, va a haber jugado pero va a seguir aburrido
-        _sprite.setPosition(300,200);
         return false;
-    }
 
-    delete cuerpo;
+
+   // delete cuerpo;
 }
 
 void Tamagotchi::llenarVecCuerpo(CuerpoSnake *vecCuerpo, int tam, CuerpoSnake agregarParte)

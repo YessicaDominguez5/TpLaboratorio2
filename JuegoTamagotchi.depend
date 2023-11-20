@@ -1449,7 +1449,7 @@
 	"Tamagotchi.h"
 	<SFML/Graphics.hpp>
 
-1700345357 c:\users\juaniyeppi\downloads\bkp\tplaboratorio2-ba9dcb4a709c15dc0a37545d6833855ec472ba25\include\tamagotchi.h
+1700508408 c:\users\juaniyeppi\downloads\bkp\tplaboratorio2-ba9dcb4a709c15dc0a37545d6833855ec472ba25\include\tamagotchi.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<stdio.h>
@@ -2037,7 +2037,7 @@
 1698622980 source:c:\users\juaniyeppi\downloads\bkp\tplaboratorio2-ba9dcb4a709c15dc0a37545d6833855ec472ba25\src\suenio.cpp
 	"Suenio.h"
 
-1700354550 source:c:\users\juaniyeppi\downloads\bkp\tplaboratorio2-ba9dcb4a709c15dc0a37545d6833855ec472ba25\src\tamagotchi.cpp
+1700511201 source:c:\users\juaniyeppi\downloads\bkp\tplaboratorio2-ba9dcb4a709c15dc0a37545d6833855ec472ba25\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1698622980 source:c:\users\juaniyeppi\downloads\bkp\tplaboratorio2-ba9dcb4a709c15dc0a37545d6833855ec472ba25\src\tamagotchigato.cpp
