@@ -24,6 +24,7 @@ public:
     bool choqueConBordes();
 
 
+
 private:
 
     sf::Sprite _spriteCuerpoSnake;

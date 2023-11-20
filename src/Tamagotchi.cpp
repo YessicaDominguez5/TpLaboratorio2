@@ -403,7 +403,9 @@ void Tamagotchi::jugar()
             {
                 std::string text = "NO ESTOY ABURRIDO";
 
-                Negarse(window,text);
+               Negarse(window,text);
+
+
 
 
             }
@@ -871,6 +873,7 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
     CuerpoSnake cuerpo[30];
     CuerpoSnake c;
     //cuerpo = new CuerpoSnake[tamVecCuerpo];
+    bool primerVuelta = true;
 
 
     bool gameOver = false, left = false, right = false, down = false, up = false;
@@ -901,7 +904,7 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 
         cuerpo[j].setearPosicionInicial(x, y);
 
-        x-=25;
+        x-=35;
 
     }
 
@@ -963,9 +966,10 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
         }
 
        for(int j=tamVecCuerpo;j>0;j--){
+
             int x = cuerpo[j-1].getPositionX();
             int y = cuerpo[j-1].getPositionY();
-        cuerpo[j].setearPosicion(x,y);
+            cuerpo[j].setearPosicion(x,y);
        }
 
        if(cuerpo[0].isCollision(m))
@@ -984,9 +988,16 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 
         }
 
+        for(int b = 5; b < tamVecCuerpo; b++){
+
+            if(cuerpo[0].getPositionX() == cuerpo[b].getPositionX() && cuerpo[0].getPositionY() == cuerpo[b].getPositionY()){ // Choque consigo mismo
+                return false;
+            }
+
+        }
+
 
         gameOver = cuerpo[0].choqueConBordes();
-
 
         texto.setString(std::to_string(manzanasRecolectadas));
         window.draw(m);
@@ -1003,6 +1014,8 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
         window.display();
 
          Sleep(100);
+
+         primerVuelta = false;
 
 
     }

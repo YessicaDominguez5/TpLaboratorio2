@@ -101,3 +101,5 @@ bool CuerpoSnake::choqueConBordes()
 
     }
 }
+
+
