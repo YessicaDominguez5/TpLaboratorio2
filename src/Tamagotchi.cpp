@@ -208,7 +208,7 @@ void Tamagotchi::jugar()
         Horario horario;
 
 
-        if(horario.getMinuto() % 3 == 0 && curado == false && banderaHorario == false) //cambia el estado //que entre una sola vez por minuto %3
+        if(horario.getMinuto() % 3 == 0 && banderaHorario == false) //cambia el estado //que entre una sola vez por minuto %3
         {
             if(_salud == 1)
             {
@@ -227,6 +227,7 @@ void Tamagotchi::jugar()
         {
             _salud = 5;
             dibujarSalud(window);
+            curado = false;
         }
         else if(!(horario.getMinuto() % 3 == 0)&& curado == true)
         {
@@ -985,6 +986,8 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
 
 
         gameOver = cuerpo[0].choqueConBordes();
+
+
         texto.setString(std::to_string(manzanasRecolectadas));
         window.draw(m);
         window.draw(texto);
