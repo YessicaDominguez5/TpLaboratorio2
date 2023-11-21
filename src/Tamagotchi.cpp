@@ -405,6 +405,9 @@ void Tamagotchi::jugar()
 
                Negarse(window,text);
 
+             // JugarSnake(window);
+             // _sprite.setPosition(300,200);
+
 
 
 
@@ -975,6 +978,8 @@ bool Tamagotchi::JugarSnake(sf::RenderWindow& window)
        if(cuerpo[0].isCollision(m))
         {
             manzanasRecolectadas++;
+
+            cuerpo[0].setVelocity(0.5);
 
             if(manzanasRecolectadas == 20)
             {

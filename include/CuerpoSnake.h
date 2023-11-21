@@ -22,6 +22,7 @@ public:
     int getPositionX();
     int getPositionY();
     bool choqueConBordes();
+    void setVelocity(float sumarVelocity);
 
 
 

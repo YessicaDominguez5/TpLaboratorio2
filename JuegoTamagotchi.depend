@@ -90,7 +90,7 @@
 	"CuerpoSnake.h"
 	"Manzana.h"
 
-1700517844 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
+1700525083 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\tamagotchi.cpp
 	"Tamagotchi.h"
 
 1695254259 source:c:\users\yeppi\documents\juegolaboratorio2\juegotamagotchi\src\funciones.cpp
@@ -1394,7 +1394,7 @@
 	<stdlib.h>
 	"Collisionable.h"
 
-1700515442 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cuerposnake.h
+1700525135 c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\include\cuerposnake.h
 	<SFML/Graphics.hpp>
 	<stdlib.h>
 	"Collisionable.h"
@@ -1406,7 +1406,7 @@
 
 1700344758 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cabezasnake.cpp
 
-1700517383 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cuerposnake.cpp
+1700525130 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\cuerposnake.cpp
 	"CuerpoSnake.h"
 
 1698622980 source:c:\users\juaniyeppi\documents\tplaboratorio2\tplaboratorio2\src\jabon.cpp

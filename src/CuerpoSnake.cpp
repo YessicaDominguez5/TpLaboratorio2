@@ -42,6 +42,7 @@ void CuerpoSnake::moveLeft()
     int x = getPositionX();
     int y = getPositionY();
     _spriteCuerpoSnake.setPosition(x-_velocityCuerpo,y);
+
 }
 void CuerpoSnake::moveRight()
 {
@@ -100,6 +101,12 @@ bool CuerpoSnake::choqueConBordes()
         return true;
 
     }
+}
+
+void CuerpoSnake::setVelocity(float sumarVelocity)
+{
+
+    _velocityCuerpo += sumarVelocity;
 }
 
 
