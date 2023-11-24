@@ -91,7 +91,7 @@ bool CuerpoSnake::choqueConBordes()
         return true;
     }
 
-    if(_spriteCuerpoSnake.getGlobalBounds().left + _spriteCuerpoSnake.getGlobalBounds().width > 800)
+    if(_spriteCuerpoSnake.getGlobalBounds().left + _spriteCuerpoSnake.getGlobalBounds().width > 900)
     {
         return true;
     }

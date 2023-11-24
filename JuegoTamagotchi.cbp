@@ -45,8 +45,8 @@
 		<Unit filename="include/BotonGris.h" />
 		<Unit filename="include/BotonNegro.h" />
 		<Unit filename="include/BotonRojo.h" />
+		<Unit filename="include/BotonSalir.h" />
 		<Unit filename="include/BotonVerde.h" />
-		<Unit filename="include/CabezaSnake.h" />
 		<Unit filename="include/Collisionable.h" />
 		<Unit filename="include/CuerpoSnake.h" />
 		<Unit filename="include/Entretenimiento.h" />
@@ -55,8 +55,10 @@
 		<Unit filename="include/Higiene.h" />
 		<Unit filename="include/Jabon.h" />
 		<Unit filename="include/Manzana.h" />
+		<Unit filename="include/No.h" />
 		<Unit filename="include/Pizza.h" />
 		<Unit filename="include/Salud.h" />
+		<Unit filename="include/Si.h" />
 		<Unit filename="include/Suenio.h" />
 		<Unit filename="include/Tamagotchi.h" />
 		<Unit filename="include/TamagotchiGato.h" />
@@ -72,8 +74,8 @@
 		<Unit filename="src/BotonGris.cpp" />
 		<Unit filename="src/BotonNegro.cpp" />
 		<Unit filename="src/BotonRojo.cpp" />
+		<Unit filename="src/BotonSalir.cpp" />
 		<Unit filename="src/BotonVerde.cpp" />
-		<Unit filename="src/CabezaSnake.cpp" />
 		<Unit filename="src/Collisionable.cpp" />
 		<Unit filename="src/CuerpoSnake.cpp" />
 		<Unit filename="src/Entretenimiento.cpp" />
@@ -82,8 +84,10 @@
 		<Unit filename="src/Higiene.cpp" />
 		<Unit filename="src/Jabon.cpp" />
 		<Unit filename="src/Manzana.cpp" />
+		<Unit filename="src/No.cpp" />
 		<Unit filename="src/Pizza.cpp" />
 		<Unit filename="src/Salud.cpp" />
+		<Unit filename="src/Si.cpp" />
 		<Unit filename="src/Suenio.cpp" />
 		<Unit filename="src/Tamagotchi.cpp" />
 		<Unit filename="src/TamagotchiGato.cpp" />

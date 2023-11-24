@@ -18,12 +18,14 @@
 #include "BotonAzul.h"
 #include "BotonVerde.h"
 #include "BotonNegro.h"
+#include "BotonSalir.h"
 #include "BotonGris.h"
 #include "Collisionable.h"
 #include "Pizza.h"
 #include "Vacuna.h"
 #include "Jabon.h"
-#include "CabezaSnake.h"
+#include "Si.h"
+#include "No.h"
 #include "CuerpoSnake.h"
 #include "Manzana.h"
 
@@ -41,6 +43,7 @@ public:
     void setEntretenimiento(bool entretenido);
     void setSalud(int tipoSalud);
     void setSuenio(bool suenio);
+    void setSalir(bool salir);
 
     std::string getSalud(int posVector);
     int getSaludNumerica();
@@ -50,6 +53,7 @@ public:
     bool getHambriento()const;
     bool getEntretenimiento()const;
     bool getSuenio()const;
+    bool getSalir()const;
 
     void petCreator(int tipoDeMascota);
 
@@ -72,7 +76,7 @@ public:
     void Negarse(sf::RenderWindow& window, std::string negacion);
     void Morir(sf::RenderWindow& window);
     bool JugarSnake(sf::RenderWindow& window);
-
+    bool Salir(sf::RenderWindow& window);
     void llenarVecCuerpo(CuerpoSnake *vecCuerpo, int tam, CuerpoSnake agregarParte);
 
 
@@ -91,6 +95,7 @@ protected:
     bool _hambriento;//1 satisfecho o 0 hambriento
     bool _entretenimiento;//1 entretenido o 0 aburrido
     bool _suenio; //1 despierto o 0 con sueño
+    bool _salir;
     sf::Sprite _sprite;
     sf::Texture _texture;
     sf::Vector2f _velocity;

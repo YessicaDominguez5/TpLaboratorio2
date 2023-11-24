@@ -184,7 +184,7 @@ void Tamagotchi::jugar()
 
     rlutil::cls();
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "TAMAGOTCHI");
+    sf::RenderWindow window(sf::VideoMode(900, 600), "TAMAGOTCHI");
     window.setFramerateLimit(60); //Limita los fps por segundo(velocidad de movimiento del sprite)
     bool alimentado = false;
     bool curado = false;
@@ -345,12 +345,14 @@ void Tamagotchi::jugar()
         BotonVerde bv;
         BotonGris bg;
         BotonNegro bn;
+        BotonSalir bs;
 
         window.draw(br);
         window.draw(ba);
         window.draw(bv);
         window.draw(bg);
         window.draw(bn);
+        window.draw(bs);
 
         dibujarAcciones(window);
 
@@ -471,6 +473,36 @@ void Tamagotchi::jugar()
             }
         }
 
+        if(isCollision(bs))
+        {
+            window.clear();
+
+    Si exit;
+    No volver;
+
+            sf::Text text;
+            std::string deseaSalir = "ESTA SEGURO QUE DESEA SALIR DEL JUEGO?";
+            text.setString(deseaSalir);
+
+
+        if(isCollision(exit))
+        {
+           window.close();
+        }
+        else if(isCollision(volver))
+        {
+            return;
+
+        }
+
+
+
+        window.draw(_sprite);
+        window.draw(exit);
+        window.draw(volver);
+        window.draw(text);
+
+
 
 
         update(120);
@@ -479,7 +511,19 @@ void Tamagotchi::jugar()
         window.display();
     }
 
-}
+
+
+
+
+
+
+        update(120);
+
+
+        window.display();
+    }//fin del while
+
+}//fin jugar
 
 void Tamagotchi::update(int valorTop)
 {
@@ -528,9 +572,9 @@ void Tamagotchi::update(int valorTop)
         _sprite.setPosition(_sprite.getPosition().x, valorTop); //que no se vaya para arriba
     }
 
-    if(_sprite.getGlobalBounds().left + _sprite.getGlobalBounds().width > 800)
+    if(_sprite.getGlobalBounds().left + _sprite.getGlobalBounds().width > 900)
     {
-        _sprite.setPosition(800 -(_sprite.getGlobalBounds().width - _sprite.getOrigin().x),_sprite.getPosition().y);//que no se vaya para la derecha
+        _sprite.setPosition(900 -(_sprite.getGlobalBounds().width - _sprite.getOrigin().x),_sprite.getPosition().y);//que no se vaya para la derecha
     }
 
     if(_sprite.getGlobalBounds().top + _sprite.getGlobalBounds().height > 600)
@@ -592,38 +636,43 @@ void Tamagotchi::dibujarAcciones(sf::RenderWindow& window)
     sf::Font font;
     font.loadFromFile("Valoon.ttf");
 
-    sf::Text textAlimentar,textJugarSnake,textDormir, textLimpiar, textCurar;
-    std::string Alimentar = "Alimentar", JugarSnake = "Jugar", Dormir = "Dormir", Limpiar = "Limpiar", Curar = "Curar";
+    sf::Text textAlimentar,textJugarSnake,textDormir, textLimpiar, textCurar, textSalir;
+    std::string Alimentar = "Alimentar", JugarSnake = "Jugar", Dormir = "Dormir", Limpiar = "Limpiar", Curar = "Curar", Salir = "Salir";
 
     textAlimentar.setFont(font);
     textJugarSnake.setFont(font);
     textDormir.setFont(font);
     textLimpiar.setFont(font);
     textCurar.setFont(font);
+    textSalir.setFont(font);
 
     textAlimentar.setFillColor(sf::Color::Yellow);
     textJugarSnake.setFillColor(sf::Color::Magenta);
     textDormir.setFillColor(sf::Color::Red);
     textLimpiar.setFillColor(sf::Color::Blue);
     textCurar.setFillColor(sf::Color::Green);
+    textSalir.setFillColor(sf::Color::Cyan);
 
     textAlimentar.setPosition(1,550);
     textJugarSnake.setPosition(200,550);
     textDormir.setPosition(350,550);
     textLimpiar.setPosition(500,550);
     textCurar.setPosition(680,550);
+    textSalir.setPosition(810,550);
 
     textAlimentar.setString(Alimentar);
     textJugarSnake.setString(JugarSnake);
     textDormir.setString(Dormir);
     textLimpiar.setString(Limpiar);
     textCurar.setString(Curar);
+    textSalir.setString(Salir);
 
     window.draw(textAlimentar);
     window.draw(textJugarSnake);
     window.draw(textDormir);
     window.draw(textLimpiar);
     window.draw(textCurar);
+    window.draw(textSalir);
 
 
 }

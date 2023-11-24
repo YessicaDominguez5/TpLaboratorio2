@@ -184,6 +184,17 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
             {
             case 1:
             {
+                FILE *p = fopen("partidanueva.dat", "wb");
+
+                 if(p == NULL)
+                 {
+                     std::cout << "No hay memoria para iniciar una partida nueva" << std::endl;
+                     //return ;
+                 }
+                 else
+                 {
+                 fclose(p);
+
                 int tipo = eleccionDeMascota();
                 if(tipo == 1) //si la mascota es tipo 1 crea un objeto TamagotchiPerro
                 {
@@ -193,12 +204,21 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
                     tp.petCreator(tipo);
                     tp.jugar();
 
+                    FILE *p = fopen("partidanueva.dat", "ab");
+                     fwrite(&tp, sizeof(TamagotchiPerro), 1, p);
+                     fclose(p);
+
                 }
                 else if(tipo == 2)//si la mascota es tipo 2 crea un objeto TamagotchiGato
                 {
                     TamagotchiGato tg;
                     tg.petCreator(tipo);
                     tg.jugar();
+
+                    FILE *p = fopen("partidanueva.dat", "ab");
+                    fwrite(&tg, sizeof(TamagotchiGato), 1, p);
+                     fclose(p);
+
                 }
                 else if(tipo == 3)//si la mascota es tipo 3 crea un objeto TamagotchiPollito
                 {
@@ -206,15 +226,74 @@ void principalMenu () // Muestra las opciones para crear o cargar una partida y 
                     tpo.petCreator(tipo);
                     tpo.jugar();
 
+                    FILE *p = fopen("partidanueva.dat", "ab");
+                    fwrite(&tpo, sizeof(TamagotchiPollito), 1, p);
+                     fclose(p);
+
+
+
                 }
                 else
                 {
                     opc = false; //Si en la eleccion de mascota se elige salir vuelve al menu anterior
                 }
             }
+
+
             break;
+                 }
             case 2:
                 //Opcion "CARGAR PARTIDA"
+                 FILE *p = fopen("partidanueva.dat", "rb");
+
+                 if(p == NULL)
+                 {
+                     std::cout << "No hay memoria para continuar la partida" << std::endl;
+
+                 }
+                 else
+                 {
+                     TamagotchiPerro auxPerro;
+
+                     fread(&auxPerro, sizeof(TamagotchiPerro),1,p);
+                     if(auxPerro.getTipoDeMascota() == "perro")
+                     {
+                    auxPerro.jugar();
+                     fclose(p);
+                         return;
+                     }
+
+                    TamagotchiGato auxGato;
+
+                     fread(&auxGato, sizeof(TamagotchiGato),1,p);
+                     if(auxGato.getTipoDeMascota() == "gato")
+                     {
+
+                    auxGato.jugar();
+                     fclose(p);
+                     return;
+
+                     }
+                     TamagotchiPollito auxPollito;
+
+                      fread(&auxPollito, sizeof(TamagotchiPollito),1,p);
+                     if(auxPollito.getTipoDeMascota() == "pollito")
+                     {
+                    auxPollito.jugar();
+                     fclose(p);
+                         return;
+                     }
+
+                    std::cout << "No se encontro ninguna partida" << std::endl;
+
+                    system("pause");
+
+                    fclose(p);
+
+                    return;
+
+
+                 }
                 break;
             }
 
