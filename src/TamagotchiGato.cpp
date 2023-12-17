@@ -19,3 +19,10 @@ void TamagotchiGato::jugar()
 
 
 }
+
+void TamagotchiGato::setSpriteGato()
+{
+    _texture.loadFromFile("TGato.png");
+    _sprite.setTexture(_texture);
+
+}

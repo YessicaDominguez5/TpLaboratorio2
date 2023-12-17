@@ -11,6 +11,7 @@ class TamagotchiPerro : public Tamagotchi
     TamagotchiPerro();
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     void jugar();
+    void setSpritePerro();
 
 
 

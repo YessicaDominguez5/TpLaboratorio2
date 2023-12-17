@@ -12,4 +12,5 @@ int eleccionDeMascota();
 void showItem(const char* text, int posx, int posy, bool selected);
 void principalMenu ();
 void seePets();
+void GuardarPartida(Tamagotchi t, int tipo);
 

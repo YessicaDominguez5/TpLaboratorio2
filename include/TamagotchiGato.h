@@ -10,6 +10,7 @@ class TamagotchiGato : public Tamagotchi
     TamagotchiGato();
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     void jugar();
+    void setSpriteGato();
 
 
 

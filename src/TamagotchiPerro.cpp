@@ -18,3 +18,10 @@ void TamagotchiPerro::jugar()
     Tamagotchi::jugar();
 
 }
+
+void TamagotchiPerro::setSpritePerro()
+{
+    _texture.loadFromFile("TPerro.png");
+    _sprite.setTexture(_texture);
+
+}

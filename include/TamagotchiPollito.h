@@ -11,6 +11,7 @@ class TamagotchiPollito : public Tamagotchi
     TamagotchiPollito();
     void draw(sf::RenderTarget& target, sf::RenderStates states)const override;
     void jugar();
+    void setSpritePollito();
 
 
 

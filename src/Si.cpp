@@ -4,7 +4,7 @@ Si::Si()
 {
     _textureSi.loadFromFile("exit.png");
     _spriteSi.setTexture(_textureSi);
-    _spriteSi.setPosition(810,490);
+    _spriteSi.setPosition(100,490);
 }
 
 void Si::draw(sf::RenderTarget& target, sf::RenderStates states)const
